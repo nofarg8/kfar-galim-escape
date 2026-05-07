@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>משימה דחופה 2050 - הקוד להצלת חוף הכרמל | כפר גלים</title>
+
+<!-- Open Graph / WhatsApp / Facebook -->
+<meta property="og:title" content="משימה דחופה 2050 - הקוד להצלת חוף הכרמל">
+<meta property="og:description" content="חדר בריחה דיגיטלי לשבוע הסביבה תשפ&quot;ו - תיכון כפר גלים. ארבעה חדרים על אקלים, אופנה, תזונה וחקלאות מדייקת.">
+<meta property="og:image" content="https://nofars.neocities.org/LINK-KFAR-GALIM.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="משימה דחופה 2050 - הקוד להצלת חוף הכרמל">
+<meta name="twitter:description" content="חדר בריחה דיגיטלי לשבוע הסביבה תשפ&quot;ו - תיכון כפר גלים">
+<meta name="twitter:image" content="https://nofars.neocities.org/LINK-KFAR-GALIM.png">
+
+<meta name="description" content="חדר בריחה דיגיטלי לשבוע הסביבה - תיכון כפר גלים תשפ&quot;ו">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #bffb33;
+  --secondary: #76d4ea;
+  --tertiary: #ffe2d8;
+  --error: #ffb4ab;
+  --bg: #111509;
+  --surface-low: #191d11;
+  --surface-mid: #1d2115;
+  --surface-high: #282c1e;
+  --on-surface: #e1e4d1;
+  --on-surface-variant: #c3caae;
+  --outline: #8d947b;
+  --outline-variant: #434934;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Heebo', sans-serif;
+  background: #111509;
+  color: #e1e4d1;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.font-display { font-family: 'Space Grotesk', 'Heebo', sans-serif; }
+.font-mono { font-family: 'Space Grotesk', monospace; }
+.ltr { direction: ltr; display: inline-block; unicode-bidi: bidi-override; }
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400;
+  vertical-align: middle;
+}
+.material-symbols-outlined.filled { font-variation-settings: 'FILL' 1; }
+
+.glass-panel {
+  backdrop-filter: blur(16px);
+  background: rgba(25, 29, 17, 0.6);
+  border: 1px solid rgba(191, 251, 51, 0.1);
+}
+.glass-strong {
+  backdrop-filter: blur(20px);
+  background: rgba(40, 44, 30, 0.7);
+  border: 1px solid rgba(191, 251, 51, 0.2);
+}
+.glow-border { box-shadow: 0 0 15px rgba(191, 251, 51, 0.15); }
+.glow-strong { box-shadow: 0 0 30px rgba(191, 251, 51, 0.4); }
+.eco-gradient {
+  background: linear-gradient(135deg, #bffb33 0%, #a0d800 50%, #4b6700 100%);
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+@keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(191, 251, 51, 0.3); } 50% { box-shadow: 0 0 40px rgba(191, 251, 51, 0.6); } }
+@keyframes pulse-error { 0%, 100% { box-shadow: 0 0 20px rgba(255, 180, 171, 0.4); } 50% { box-shadow: 0 0 50px rgba(255, 180, 171, 0.8); } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-8px); } 75% { transform: translateX(8px); } }
+@keyframes successFlash { 0%, 100% { box-shadow: 0 0 0 rgba(191, 251, 51, 0); transform: scale(1); } 50% { box-shadow: 0 0 60px rgba(191, 251, 51, 0.9); transform: scale(1.02); } }
+@keyframes growBar { from { width: 0; } to { width: 100%; } }
+@keyframes float-up { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-50px); opacity: 0; } }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(191, 251, 51, 0.6); } 100% { box-shadow: 0 0 0 20px rgba(191, 251, 51, 0); } }
+@keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+@keyframes nodeUnlock {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(191,251,51,0); }
+  30% { transform: scale(1.18); box-shadow: 0 0 60px rgba(191,251,51,1); }
+  60% { transform: scale(1.05); box-shadow: 0 0 40px rgba(191,251,51,0.7); }
+  100% { transform: scale(1); box-shadow: 0 0 12px rgba(191,251,51,0.3); }
+}
+
+.animate-fadeIn { animation: fadeIn 0.6s ease-out; }
+.animate-nodeUnlock { animation: nodeUnlock 1.4s ease-out; }
+.animate-slideIn { animation: slideIn 0.5s ease-out; }
+.animate-scaleIn { animation: scaleIn 0.5s ease-out; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-pulse-error { animation: pulse-error 1.5s ease-in-out infinite; }
+.animate-shake { animation: shake 0.4s; }
+.animate-success { animation: successFlash 0.6s; }
+
+.draggable {
+  cursor: grab; user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s; touch-action: none;
+}
+.draggable:hover { transform: translateY(-3px); }
+.draggable.dragging { opacity: 0.4; cursor: grabbing; transform: scale(1.05); }
+.drop-zone { transition: all 0.2s ease; }
+.drop-zone.over {
+  background: rgba(191, 251, 51, 0.15) !important;
+  border-color: #bffb33 !important;
+  box-shadow: inset 0 0 20px rgba(191, 251, 51, 0.2);
+}
+
+.tile-cell { transition: all 0.25s; cursor: pointer; position: relative; overflow: hidden; }
+.tile-cell:hover { transform: scale(1.05); z-index: 5; }
+
+.bio-pattern {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(191, 251, 51, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(118, 212, 234, 0.06) 0%, transparent 50%);
+}
+
+input[type="range"].climate-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  background: linear-gradient(90deg, #bffb33 0%, #76d4ea 30%, #ffa62b 65%, #ffb4ab 100%);
+  border-radius: 7px;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"].climate-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #bffb33;
+  cursor: grab;
+  box-shadow: 0 0 15px rgba(191, 251, 51, 0.6);
+}
+input[type="range"].climate-slider::-moz-range-thumb {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #bffb33;
+  cursor: grab;
+  box-shadow: 0 0 15px rgba(191, 251, 51, 0.6);
+}
+
+.earth-container { position: relative; width: 100%; max-width: 280px; aspect-ratio: 1; margin: 0 auto; }
+.earth-orb {
+  width: 100%; height: 100%;
+  border-radius: 50%; position: relative;
+  transition: opacity 1s ease;
+}
+.earth-damaged {
+  background: radial-gradient(circle at 35% 30%, #6b3410 0%, #4a2208 30%, #2a1804 60%, #1a0e02 100%);
+  box-shadow: inset -20px -20px 50px rgba(0,0,0,0.6), 0 0 60px rgba(255, 100, 50, 0.4);
+  position: absolute; inset: 0;
+}
+.earth-damaged::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(255, 100, 50, 0.4), transparent 25%),
+    radial-gradient(ellipse at 70% 60%, rgba(120, 70, 30, 0.5), transparent 20%),
+    radial-gradient(ellipse at 50% 80%, rgba(80, 50, 20, 0.6), transparent 25%);
+  mix-blend-mode: overlay;
+}
+.earth-healthy {
+  background: radial-gradient(circle at 35% 30%, #4ade80 0%, #2563eb 35%, #1e40af 65%, #0c1e4a 100%);
+  box-shadow: inset -20px -20px 50px rgba(0,0,0,0.4), 0 0 80px rgba(74, 222, 128, 0.5);
+  position: absolute; inset: 0;
+}
+.earth-healthy::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 30% 35%, rgba(74, 222, 128, 0.6), transparent 25%),
+    radial-gradient(ellipse at 60% 60%, rgba(34, 197, 94, 0.5), transparent 20%),
+    radial-gradient(ellipse at 75% 35%, rgba(255,255,255,0.3), transparent 15%);
+  mix-blend-mode: overlay;
+}
+.earth-rotating { animation: rotate-slow 60s linear infinite; }
+@keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.heal-particle {
+  position: absolute;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #bffb33;
+  pointer-events: none;
+  box-shadow: 0 0 10px #bffb33;
+  animation: float-up 2s ease-out forwards;
+}
+
+.food-plate {
+  width: 100%; max-width: 280px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2a3024 0%, #1a1f15 70%);
+  border: 8px solid #434934;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 0 20px rgba(0,0,0,0.6);
+  position: relative;
+  margin: 0 auto;
+  transition: all 0.3s;
+}
+.food-on-plate {
+  position: absolute;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.food-on-plate:hover { transform: scale(1.15); }
+
+.shopping-cart {
+  background: linear-gradient(135deg, rgba(255, 180, 171, 0.1), rgba(255, 100, 80, 0.05));
+  border: 2px dashed rgba(255, 180, 171, 0.5);
+  border-radius: 16px;
+  transition: all 0.3s;
+}
+.shopping-cart.over {
+  background: linear-gradient(135deg, rgba(255, 180, 171, 0.25), rgba(255, 100, 80, 0.15));
+  border-color: #ffb4ab;
+  transform: scale(1.02);
+}
+
+.meter-track {
+  height: 24px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(191, 251, 51, 0.2);
+}
+.meter-fill {
+  height: 100%;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+.meter-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  animation: shimmer 2s linear infinite;
+}
+
+.transition-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: black;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .timer-mobile { font-size: 22px !important; }
+  .header-title-mobile { font-size: 14px !important; }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #191d11; }
+::-webkit-scrollbar-thumb { background: #434934; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #bffb33; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="fixed top-0 right-0 left-0 h-20 z-50 glass-panel border-b border-primary/20 px-3 md:px-6" style="border-bottom-color: rgba(191,251,51,0.2);">
+  <div class="h-full max-w-[1440px] mx-auto flex items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <img src="https://nofars.neocities.org/KFARGALIM.png" alt="כפר גלים" class="w-12 h-12 md:w-14 md:h-14 object-contain rounded-lg p-1.5" style="background:rgba(255,255,255,0.95);box-shadow:0 0 12px rgba(191,251,51,0.3);border:1px solid rgba(191,251,51,0.4);">
+      <div class="flex flex-col">
+        <h1 class="font-display font-bold text-base md:text-2xl tracking-tight header-title-mobile" style="color: #bffb33;">
+          משימה דחופה <span class="ltr font-mono">2050</span>
+        </h1>
+        <span class="text-[10px] md:text-xs font-mono tracking-[0.2em] hidden sm:block ltr" style="color: #c3caae;">
+          MISSION CRITICAL
+        </span>
+      </div>
+    </div>
+    <div class="flex items-center gap-2 md:gap-4">
+      <div id="progressDots" class="hidden md:flex items-center gap-2"></div>
+      <div class="flex items-center gap-2 glass-strong px-3 md:px-4 py-2 rounded-lg">
+        <span class="material-symbols-outlined text-xl md:text-2xl" id="timerIcon" style="color: #bffb33;">timer</span>
+        <span id="timerDisplay" class="font-mono font-bold text-2xl md:text-3xl tracking-wider timer-mobile ltr" style="color: #bffb33;">35:00</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="pt-24 pb-20 px-3 md:px-6 max-w-[1440px] mx-auto min-h-screen relative">
+  <div id="screenContainer"></div>
+</main>
+
+<!-- FOOTER -->
+<footer class="fixed bottom-0 right-0 left-0 z-40 glass-panel border-t border-primary/10 py-2 px-4" style="border-top-color: rgba(191,251,51,0.1);">
+  <a href="https://www.sciencedu.online/" target="_blank" rel="noopener noreferrer"
+     class="max-w-[1440px] mx-auto flex items-center justify-center gap-2 md:gap-3 hover:opacity-80 transition-opacity group">
+    <span class="text-[11px] md:text-xs" style="color: #c3caae;">פותח על ידי</span>
+    <span class="text-[11px] md:text-xs font-bold group-hover:underline underline-offset-2" style="color: #bffb33;">נופר גרגרוד</span>
+    <span class="text-[11px] md:text-xs" style="color: #c3caae;">·</span>
+    <span class="text-[11px] md:text-xs group-hover:underline underline-offset-2" style="color: #c3caae;">פיתוח חשיבה</span>
+    <img src="https://nofars.neocities.org/LOGOMAIN.png" alt="לוגו" class="h-5 md:h-6 object-contain">
+    <span class="material-symbols-outlined text-sm opacity-50 group-hover:opacity-100 transition-opacity" style="color: #c3caae;">open_in_new</span>
+  </a>
+</footer>
+
+
+<script>
+// ========== STATE ==========
+const state = {
+  screen: 'presentation',
+  timerStarted: false,
+  timeLeft: 35 * 60,
+  timerInterval: null,
+  startTime: null,
+  errors: 0,
+  roomsCompleted: [false, false, false, false, false],
+  // Team info
+  teamNames: '',
+  className: '',
+  // Room 1
+  r1Cart: [],
+  r1Stage: 'cart',
+  r1Attempts: 0,
+  // Room 2
+  r2Stage: 'chain',
+  r2NodesCorrect: { 2: false, 3: false, 4: false },
+  r2ActiveQuestion: null,
+  r2QuestionAttempts: { 2: 0, 3: 0, 4: 0 },
+  r2JustUnlocked: null,
+  r2Actions: { renewable: false, trees: false, electric: false },
+  // Room 3
+  r3Plate: [],
+  // Room 4
+  r4Stage: 1,
+  r4Cells: null,
+  r4Conventional: 1000,
+  r4Precision: 350,
+  // Room 5
+  r5Activated: [],
+};
+
+let draggedItem = null;
+
+// ========== SOUND ==========
+function playSound(type) {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const now = ctx.currentTime;
+
+    if (type === 'click') {
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
+      o.type = 'triangle'; o.frequency.value = 600;
+      g.gain.setValueAtTime(0.05, now);
+      g.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+      o.start(now); o.stop(now + 0.1);
+    } else if (type === 'pickup') {
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
+      o.type = 'sine'; o.frequency.value = 800;
+      g.gain.setValueAtTime(0.06, now);
+      g.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+      o.start(now); o.stop(now + 0.15);
+    } else if (type === 'drop') {
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
+      o.type = 'triangle';
+      o.frequency.setValueAtTime(400, now);
+      o.frequency.exponentialRampToValueAtTime(200, now + 0.1);
+      g.gain.setValueAtTime(0.08, now);
+      g.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+      o.start(now); o.stop(now + 0.15);
+    } else if (type === 'success') {
+      [523, 659, 784].forEach((f, i) => {
+        const o = ctx.createOscillator(); const g = ctx.createGain();
+        o.connect(g); g.connect(ctx.destination);
+        o.type = 'sine'; o.frequency.value = f;
+        g.gain.setValueAtTime(0.1, now + i * 0.08);
+        g.gain.exponentialRampToValueAtTime(0.01, now + i * 0.08 + 0.3);
+        o.start(now + i * 0.08); o.stop(now + i * 0.08 + 0.3);
+      });
+    } else if (type === 'error') {
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
+      o.type = 'sawtooth';
+      o.frequency.setValueAtTime(180, now);
+      o.frequency.linearRampToValueAtTime(140, now + 0.2);
+      g.gain.setValueAtTime(0.08, now);
+      g.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+      o.start(now); o.stop(now + 0.3);
+    } else if (type === 'water') {
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.connect(g); g.connect(ctx.destination);
+      o.type = 'sine';
+      o.frequency.setValueAtTime(500, now);
+      o.frequency.exponentialRampToValueAtTime(800, now + 0.15);
+      o.frequency.exponentialRampToValueAtTime(400, now + 0.3);
+      g.gain.setValueAtTime(0.07, now);
+      g.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+      o.start(now); o.stop(now + 0.4);
+    } else if (type === 'roomComplete') {
+      [523, 659, 784, 1046].forEach((f, i) => {
+        const o = ctx.createOscillator(); const g = ctx.createGain();
+        o.connect(g); g.connect(ctx.destination);
+        o.type = 'sine'; o.frequency.value = f;
+        g.gain.setValueAtTime(0.1, now + i * 0.1);
+        g.gain.exponentialRampToValueAtTime(0.01, now + i * 0.1 + 0.5);
+        o.start(now + i * 0.1); o.stop(now + i * 0.1 + 0.5);
+      });
+    } else if (type === 'victory') {
+      [523, 659, 784, 1046, 1318, 1568].forEach((f, i) => {
+        const o = ctx.createOscillator(); const g = ctx.createGain();
+        o.connect(g); g.connect(ctx.destination);
+        o.type = 'triangle'; o.frequency.value = f;
+        g.gain.setValueAtTime(0.12, now + i * 0.12);
+        g.gain.exponentialRampToValueAtTime(0.01, now + i * 0.12 + 0.7);
+        o.start(now + i * 0.12); o.stop(now + i * 0.12 + 0.7);
+      });
+    }
+  } catch(e) {}
+}
+
+// ========== TIMER ==========
+function startTimer() {
+  if (state.timerStarted) return;
+  state.timerStarted = true;
+  state.startTime = Date.now();
+  state.timerInterval = setInterval(() => {
+    state.timeLeft = Math.max(0, state.timeLeft - 1);
+    updateTimer();
+  }, 1000);
+  updateTimer();
+}
+
+function updateTimer() {
+  const m = Math.floor(state.timeLeft / 60);
+  const s = state.timeLeft % 60;
+  const danger = state.timeLeft < 5 * 60;
+  const display = document.getElementById('timerDisplay');
+  const icon = document.getElementById('timerIcon');
+  if (display) {
+    display.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    display.style.color = danger ? '#ffb4ab' : '#bffb33';
+    if (danger) display.classList.add('animate-pulse'); else display.classList.remove('animate-pulse');
+  }
+  if (icon) icon.style.color = danger ? '#ffb4ab' : '#bffb33';
+}
+
+function updateProgressDots() {
+  const container = document.getElementById('progressDots');
+  if (!container) return;
+  const currentIdx = ({room1: 0, room2: 1, room3: 2, room4: 3, room5: 4})[state.screen];
+  if (currentIdx === undefined) { container.innerHTML = ''; return; }
+
+  let html = '';
+  for (let i = 0; i < 5; i++) {
+    const isActive = i <= currentIdx;
+    const color = isActive ? '#bffb33' : '#434934';
+    const shadow = isActive ? '0 0 10px rgba(191, 251, 51, 0.6)' : 'none';
+    const opacity = isActive ? 1 : 0.3;
+    html += '<div class="w-2.5 h-2.5 rounded-full transition-all" style="background:' + color + ';box-shadow:' + shadow + ';opacity:' + opacity + ';"></div>';
+  }
+  container.innerHTML = html;
+}
+
+// ========== TRANSITIONS ==========
+function transition(nextScreen, text) {
+  const overlay = document.createElement('div');
+  overlay.className = 'transition-overlay';
+  overlay.innerHTML = '<div class="text-3xl md:text-5xl font-display font-bold animate-pulse mb-4 text-center px-4" style="color:#bffb33;">' + text + '</div><div class="w-64 h-2 bg-slate-800 rounded overflow-hidden"><div class="h-full" style="background:#bffb33;animation:growBar 1.5s ease-out forwards;"></div></div>';
+  document.body.appendChild(overlay);
+  setTimeout(() => {
+    overlay.remove();
+    goToScreen(nextScreen);
+  }, 1800);
+}
+
+function goToScreen(screen) {
+  state.screen = screen;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  updateProgressDots();
+  const c = document.getElementById('screenContainer');
+  c.innerHTML = '';
+
+  if (screen === 'presentation') renderPresentation();
+  else if (screen === 'video') renderVideo();
+  else if (screen === 'team-input') renderTeamInput();
+  else if (screen === 'briefing') renderBriefing();
+  else if (screen === 'certificate') renderCertificate();
+  else if (screen === 'room1') renderRoom1();
+  else if (screen === 'room2') renderRoom2();
+  else if (screen === 'room3') renderRoom3();
+  else if (screen === 'room4') renderRoom4();
+  else if (screen === 'room5') renderRoom5();
+  else if (screen === 'victory') renderVictory();
+}
+
+// ========== SCREEN: PRESENTATION (הקנייה ראשונית) ==========
+function renderPresentation() {
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn flex flex-col items-center justify-start pt-4 md:pt-8 pb-8">
+      <div class="flex items-center gap-3 mb-6 glass-panel px-4 py-2 rounded-full">
+        <div class="w-2 h-2 rounded-full animate-pulse" style="background:#76d4ea;"></div>
+        <span class="font-mono text-xs md:text-sm tracking-[0.2em] uppercase" dir="ltr" style="color:#76d4ea;">Briefing 01 / Mission Setup</span>
+      </div>
+      <h2 class="text-center font-display font-bold text-2xl md:text-4xl mb-2 tracking-tight" style="color:#bffb33;">
+        תדרוך פתיחה - שבוע סביבה
+      </h2>
+      <p class="text-sm md:text-base mb-4 text-center px-4" style="color:#c3caae;">
+        תזונה בת קיימא, משבר האקלים, ופתרונות המאה ה-21
+      </p>
+
+      <div class="glass-strong rounded-xl px-5 py-4 mb-5 max-w-2xl text-center border-2 animate-pulse-glow" style="border-color:#ffa62b;background:linear-gradient(135deg,rgba(255,166,43,0.15),rgba(255,180,171,0.08));box-shadow:0 0 25px rgba(255,166,43,0.3);">
+        <p class="text-base md:text-lg font-bold flex items-center justify-center gap-2 flex-wrap" style="color:#ffa62b;">
+          <span class="material-symbols-outlined text-2xl filled">volume_up</span>
+          <span>לפני שמתחילים: הפעילו את האודיו במצגת</span>
+        </p>
+        <p class="text-xs md:text-sm mt-1" style="color:#ffd9b3;">
+          לחצו על ▶ ועל אייקון הרמקול 🔊 בתוך נגן המצגת
+        </p>
+      </div>
+
+      <div class="w-full max-w-5xl glass-strong rounded-2xl p-3 md:p-4 glow-border relative overflow-hidden mb-6">
+        <div class="absolute top-0 right-0 w-8 h-1" style="background:rgba(118,212,234,0.6);"></div>
+        <div class="absolute top-0 right-0 w-1 h-8" style="background:rgba(118,212,234,0.6);"></div>
+        <div class="absolute bottom-0 left-0 w-8 h-1" style="background:rgba(118,212,234,0.6);"></div>
+        <div class="absolute bottom-0 left-0 w-1 h-8" style="background:rgba(118,212,234,0.6);"></div>
+        <div style="position:relative;width:100%;height:0;padding-top:56.25%;overflow:hidden;border-radius:12px;">
+          <iframe loading="lazy" style="position:absolute;width:100%;height:100%;top:0;left:0;border:none;"
+            src="https://www.canva.com/design/DAHH3HWpLN8/Qx8SrOaolnvWT8UOEkOA_g/view?embed&autoplay=1"
+            allowfullscreen allow="autoplay; fullscreen"></iframe>
+        </div>
+      </div>
+
+      <div class="glass-panel rounded-xl px-5 py-4 mb-6 max-w-2xl text-center border" style="border-color:rgba(118,212,234,0.3);">
+        <p class="text-sm md:text-base" style="color:#c3caae;">
+          <span class="material-symbols-outlined text-base align-middle" style="color:#76d4ea;">lightbulb</span>
+          עברו על המצגת. כשתסיימו, לחצו להמשך כדי לקבל הודעה דחופה ממאדים.
+        </p>
+      </div>
+
+      <button onclick="playSound('click'); goToScreen('video')"
+        class="group relative px-8 md:px-12 py-4 md:py-5 rounded-full eco-gradient font-display font-bold text-base md:text-xl flex items-center gap-3 hover:scale-105 active:scale-95 transition-all duration-300 glow-strong"
+        style="color:#445e00;">
+        <span>סיימנו - להודעה הדחופה</span>
+        <span class="material-symbols-outlined filled">arrow_back</span>
+      </button>
+    </div>
+  `;
+}
+
+
+
+// ========== SCREEN: VIDEO ==========
+function renderVideo() {
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn flex flex-col items-center justify-start pt-4 md:pt-8 pb-8">
+      <div class="flex items-center gap-3 mb-6 glass-panel px-4 py-2 rounded-full">
+        <div class="w-2 h-2 rounded-full animate-pulse" style="background:#ffb4ab;"></div>
+        <span class="font-mono text-xs md:text-sm tracking-[0.2em] uppercase ltr" style="color:#ffb4ab;">Incoming Transmission</span>
+      </div>
+      <h2 class="text-center font-display font-bold text-2xl md:text-4xl mb-2 tracking-tight" style="color:#bffb33;">הודעה דחופה מד"ר גלי כפר</h2>
+      <p class="text-sm md:text-base mb-6 text-center px-4 font-mono flex items-center justify-center gap-2 flex-wrap" style="color:#c3caae;">
+        <span dir="ltr">13.05.2050</span>
+        <span>·</span>
+        <span dir="ltr">Mars Colony "New Earth"</span>
+      </p>
+      <div class="w-full max-w-md md:max-w-lg glass-strong rounded-2xl p-3 md:p-4 glow-border relative overflow-hidden mb-8">
+        <div class="absolute top-0 right-0 w-8 h-1" style="background:rgba(191,251,51,0.6);"></div>
+        <div class="absolute top-0 right-0 w-1 h-8" style="background:rgba(191,251,51,0.6);"></div>
+        <div class="absolute bottom-0 left-0 w-8 h-1" style="background:rgba(191,251,51,0.6);"></div>
+        <div class="absolute bottom-0 left-0 w-1 h-8" style="background:rgba(191,251,51,0.6);"></div>
+        <div style="position:relative;width:100%;height:0;padding-top:177.7778%;overflow:hidden;border-radius:12px;">
+          <iframe loading="lazy" style="position:absolute;width:100%;height:100%;top:0;left:0;border:none;"
+            src="https://www.canva.com/design/DAHI5C_uW3M/5APu5n7c35hdsRI3zdkl0Q/watch?embed&autoplay=1"
+            allowfullscreen allow="autoplay; fullscreen"></iframe>
+        </div>
+        <div class="absolute top-6 left-6 flex items-center gap-2 glass-panel px-2 py-1 rounded-md z-10">
+          <div class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:#ffb4ab;"></div>
+          <span class="font-mono text-[10px] tracking-widest ltr" style="color:#ffb4ab;">LIVE</span>
+        </div>
+      </div>
+      <p class="text-xs md:text-sm text-center max-w-md mb-6 px-4" style="color:#c3caae;">
+        🎧 לחצו על הסרטון להאזנה. אחרי שתסיימו לצפות, התחילו את המשימה.
+      </p>
+      <button onclick="playSound('click'); goToScreen('team-input')"
+        class="group relative px-8 md:px-12 py-4 md:py-5 rounded-full eco-gradient font-display font-bold text-base md:text-xl flex items-center gap-3 hover:scale-105 active:scale-95 transition-all duration-300 glow-strong"
+        style="color:#445e00;">
+        <span>קיבלתי - ממשיך למשימה</span>
+        <span class="material-symbols-outlined filled">arrow_back</span>
+      </button>
+    </div>
+  `;
+}
+
+// ========== SCREEN: TEAM INPUT ==========
+function renderTeamInput() {
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-2xl mx-auto pt-4 md:pt-8">
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center gap-3 glass-panel rounded-full px-5 py-2 mb-4">
+          <span class="material-symbols-outlined filled" style="color:#bffb33;">badge</span>
+          <span class="font-mono text-xs md:text-sm tracking-[0.2em] uppercase" dir="ltr" style="color:#bffb33;">Crew Registration</span>
+        </div>
+        <h2 class="font-display font-bold text-2xl md:text-4xl mb-3 tracking-tight" style="color:#bffb33;">לפני שמתחילים - מי הצוות?</h2>
+        <p class="text-sm md:text-base px-4" style="color:#c3caae;">
+          לפני שיוצאים למשימה - מי הצוות שייכנס לחדר הבריחה?
+        </p>
+      </div>
+
+      <div class="glass-strong rounded-2xl p-5 md:p-7 mb-6 border-2" style="border-color:rgba(191,251,51,0.3);">
+        <div class="space-y-5">
+          <div>
+            <label class="block">
+              <div class="flex items-center gap-2 mb-2 text-sm md:text-base font-bold" style="color:#bffb33;">
+                <span class="material-symbols-outlined text-base">groups</span>
+                שמות חברי הצוות
+              </div>
+              <input type="text" id="teamNamesInput" maxlength="120"
+                class="w-full px-4 py-3 rounded-lg text-base md:text-lg transition-all"
+                style="background:#191d11;border:2px solid #434934;color:#e1e4d1;outline:none;"
+                onfocus="this.style.borderColor='#bffb33';"
+                onblur="this.style.borderColor='#434934';"
+                placeholder="לדוגמה: דנה, יוסי, שיר ותמר"
+                value="${state.teamNames}">
+              <div class="text-[11px] mt-1" style="color:#8d947b;">הפרידו את השמות בפסיקים</div>
+            </label>
+          </div>
+
+          <div>
+            <label class="block">
+              <div class="flex items-center gap-2 mb-2 text-sm md:text-base font-bold" style="color:#76d4ea;">
+                <span class="material-symbols-outlined text-base">school</span>
+                מאיזו כיתה
+              </div>
+              <input type="text" id="classNameInput" maxlength="20"
+                class="w-full px-4 py-3 rounded-lg text-base md:text-lg transition-all"
+                style="background:#191d11;border:2px solid #434934;color:#e1e4d1;outline:none;"
+                onfocus="this.style.borderColor='#76d4ea';"
+                onblur="this.style.borderColor='#434934';"
+                placeholder="לדוגמה: י3"
+                value="${state.className}">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="r2SaveTeamInfo()" id="teamSubmitBtn"
+        class="w-full px-6 md:px-8 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong" style="color:#445e00;">
+        <span>המשך לתדרוך המשימה</span>
+        <span class="material-symbols-outlined filled">arrow_back</span>
+      </button>
+
+      <div id="teamInputError" class="mt-3 text-center text-sm" style="color:#ffb4ab;"></div>
+    </div>
+  `;
+}
+
+function r2SaveTeamInfo() {
+  const names = document.getElementById('teamNamesInput').value.trim();
+  const cls = document.getElementById('classNameInput').value.trim();
+  const err = document.getElementById('teamInputError');
+  if (!names || !cls) {
+    err.textContent = '⚠ אנא מלאו את שני השדות לפני שממשיכים';
+    playSound('error');
+    return;
+  }
+  state.teamNames = names;
+  state.className = cls;
+  playSound('click');
+  goToScreen('briefing');
+}
+
+// ========== SCREEN: BRIEFING ==========
+function renderBriefing() {
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn flex flex-col items-center justify-start pt-4 md:pt-8 pb-8">
+      <div class="mb-8 relative">
+        <div class="absolute inset-0 rounded-full blur-3xl scale-125" style="background:rgba(191,251,51,0.2);"></div>
+        <div class="relative w-32 h-32 md:w-44 md:h-44 flex items-center justify-center rounded-full glass-strong border-2 animate-pulse-glow" style="border-color:rgba(191,251,51,0.3);">
+          <span class="material-symbols-outlined" style="color:#bffb33;font-size:110px;">public</span>
+        </div>
+        <div class="absolute -top-2 -right-2 w-10 h-10 rounded-full glass-strong border flex items-center justify-center" style="border-color:rgba(191,251,51,0.4);">
+          <span class="material-symbols-outlined filled text-lg" style="color:#bffb33;">eco</span>
+        </div>
+      </div>
+      <h1 class="font-display text-4xl md:text-6xl font-bold tracking-tight text-center mb-2" style="color:#bffb33;">
+        משימה <span class="ltr font-mono">2050</span>
+      </h1>
+      <p class="font-display text-xl md:text-3xl mb-10 text-center px-4" style="color:#76d4ea;">הקוד להצלת חוף הכרמל</p>
+
+      <div class="w-full max-w-3xl glass-strong glow-border p-6 md:p-10 rounded-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-1" style="background:rgba(191,251,51,0.5);"></div>
+        <div class="absolute top-0 right-0 w-1 h-24" style="background:rgba(191,251,51,0.5);"></div>
+        <div class="absolute bottom-0 left-0 w-24 h-1" style="background:rgba(191,251,51,0.5);"></div>
+        <div class="absolute bottom-0 left-0 w-1 h-24" style="background:rgba(191,251,51,0.5);"></div>
+        <div class="flex items-center gap-3 mb-6 pb-4 border-b" style="border-color:rgba(191,251,51,0.1);">
+          <span class="material-symbols-outlined filled text-2xl" style="color:#bffb33;">campaign</span>
+          <span class="font-mono text-sm md:text-base tracking-wider uppercase ltr" style="color:#bffb33;">Mission Brief</span>
+          <span class="mr-auto font-mono text-xs md:text-sm ltr" style="color:#c3caae;">CODE: KG-2050</span>
+        </div>
+        <div class="space-y-4 text-base md:text-lg leading-relaxed">
+          <p style="color:#e1e4d1;">
+            ד"ר גלי כפר העבירה לכם הודעה ברורה: <span class="font-bold" style="color:#bffb33;">משבר האקלים מאיים על חוף הכרמל</span>.
+          </p>
+          <p style="color:#c3caae;">
+            ארבעה חדרי אבטחה מפרידים בינכם לבין מערכת הבקרה הראשית של החקלאות המדייקת בכפר גלים.
+            לכל חדר חידה משלו - ובסוף תפעילו יחד את <span class="font-bold" style="color:#bffb33;">מערכת השליטה הראשית</span> ותשקמו את כדור הארץ.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
+            <div class="glass-panel p-3 rounded-lg text-center"><div class="text-2xl mb-1">👗</div><div class="text-xs ltr font-mono" style="color:#c3caae;">ROOM 01</div><div class="text-sm font-bold" style="color:#e1e4d1;">אופנה</div></div>
+            <div class="glass-panel p-3 rounded-lg text-center"><div class="text-2xl mb-1">🌊</div><div class="text-xs ltr font-mono" style="color:#c3caae;">ROOM 02</div><div class="text-sm font-bold" style="color:#e1e4d1;">אקלים</div></div>
+            <div class="glass-panel p-3 rounded-lg text-center"><div class="text-2xl mb-1">🍽️</div><div class="text-xs ltr font-mono" style="color:#c3caae;">ROOM 03</div><div class="text-sm font-bold" style="color:#e1e4d1;">תזונה</div></div>
+            <div class="glass-panel p-3 rounded-lg text-center"><div class="text-2xl mb-1">🌾</div><div class="text-xs ltr font-mono" style="color:#c3caae;">ROOM 04</div><div class="text-sm font-bold" style="color:#e1e4d1;">חקלאות</div></div>
+          </div>
+          <div class="p-4 rounded-lg flex items-start gap-3" style="background:rgba(147,0,10,0.2);border-right:4px solid #ffb4ab;">
+            <span class="material-symbols-outlined filled" style="color:#ffb4ab;">warning</span>
+            <div>
+              <div class="font-bold" style="color:#ffdad6;"><span class="ltr">35</span> דקות בלבד!</div>
+              <div class="text-sm mt-1" style="color:#c3caae;">הטיימר מתחיל ברגע שתלחצו על "התחלת המשימה".</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 group relative">
+        <div class="absolute -inset-4 rounded-full blur-2xl" style="background:rgba(191,251,51,0.2);"></div>
+        <button onclick="startMission()" class="relative px-10 md:px-16 py-5 md:py-6 rounded-full eco-gradient font-display font-bold text-lg md:text-2xl flex items-center gap-4 glow-strong hover:scale-105 active:scale-95 transition-all duration-300" style="color:#445e00;">
+          <span class="material-symbols-outlined filled">rocket_launch</span>
+          <span>התחלת המשימה</span>
+        </button>
+      </div>
+      <p class="text-xs mt-4" style="color:#c3caae;">בלחיצה הטיימר יופעל</p>
+    </div>
+  `;
+}
+
+function startMission() {
+  startTimer();
+  playSound('roomComplete');
+  transition('room1', 'נכנסים לחדר 1...');
+}
+
+// ========== ROOM 1: FASHION ==========
+const r1Items = [
+  { id: 'dress', name: 'שמלה', emoji: '👗', water: 2700, co2: 5, color: '#f4989c', tag: 'trendy' },
+  { id: 'shirt', name: 'חולצה', emoji: '👕', water: 2200, co2: 5, color: '#76d4ea', tag: 'fast' },
+  { id: 'pants', name: 'מכנסיים', emoji: '👖', water: 3800, co2: 5, color: '#7371fc', tag: 'trendy' },
+];
+
+const R1_TOTAL_WATER = 8700;
+const R1_TOTAL_CO2 = 15;
+// קוד החדר: מים חלקי פחמן עבור החולצה (2 פריטים אזלו מהמלאי)
+const R1_SHIRT_WATER = 2200;
+const R1_SHIRT_CO2 = 5;
+const R1_CODE = R1_SHIRT_WATER / R1_SHIRT_CO2; // = 440
+
+function r1RoomHeader() {
+  return `
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl glass-strong border-2 flex items-center justify-center text-3xl md:text-4xl" style="border-color:rgba(191,251,51,0.4);">👗</div>
+      <div class="flex-1">
+        <div class="font-mono text-xs md:text-sm tracking-widest" dir="ltr" style="color:#bffb33;">ROOM 01 / 04</div>
+        <h2 class="font-display font-bold text-2xl md:text-4xl tracking-tight" style="color:#bffb33;">טביעת הרגל הסודית</h2>
+        <p class="text-sm md:text-base" style="color:#c3caae;">תעשיית האופנה והשפעתה על הסביבה</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderRoom1() {
+  state.r1Cart = [];
+  state.r1Stage = 'cart';
+  state.r1Attempts = 0;
+  r1RenderStageCart();
+}
+
+// ========== ROOM 1 - STAGE 1: CART ==========
+function r1RenderStageCart() {
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-6xl mx-auto">
+      ${r1RoomHeader()}
+
+      <div class="grid grid-cols-2 gap-3 md:gap-4 mb-6">
+        <div class="glass-strong rounded-xl p-4 md:p-5">
+          <div class="flex items-center justify-between mb-2">
+            <div class="text-xs md:text-sm flex items-center gap-2" style="color:#76d4ea;">
+              <span class="material-symbols-outlined filled text-base">water_drop</span>
+              <span>מד צריכת מים</span>
+            </div>
+            <div class="font-mono font-bold text-sm md:text-base" dir="ltr" style="color:#76d4ea;">
+              <span id="r1WaterTotal">0</span> L
+            </div>
+          </div>
+          <div class="meter-track"><div id="r1WaterFill" class="meter-fill" style="width:0%;background:linear-gradient(90deg,#76d4ea,#008095);"></div></div>
+        </div>
+        <div class="glass-strong rounded-xl p-4 md:p-5">
+          <div class="flex items-center justify-between mb-2">
+            <div class="text-xs md:text-sm flex items-center gap-2" style="color:#ffb4ab;">
+              <span class="material-symbols-outlined filled text-base">cloud</span>
+              <span>מד פליטות פחמן</span>
+            </div>
+            <div class="font-mono font-bold text-sm md:text-base" dir="ltr" style="color:#ffb4ab;">
+              <span id="r1Co2Total">0</span> kg
+            </div>
+          </div>
+          <div class="meter-track"><div id="r1Co2Fill" class="meter-fill" style="width:0%;background:linear-gradient(90deg,#ffa62b,#ffb4ab);"></div></div>
+        </div>
+      </div>
+
+      <div class="glass-panel rounded-xl p-4 md:p-5 mb-6" style="border-right:4px solid #bffb33;">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled" style="color:#bffb33;">shopping_cart</span>
+          <div class="flex-1">
+            <div class="font-bold text-sm md:text-base mb-1" style="color:#bffb33;">📋 משימה: ההזמנה של תלמידה מכפר גלים</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              תלמידה הזמינה <span class="font-bold font-mono" dir="ltr" style="color:#bffb33;">3</span> פריטי בגדים מ-<span class="font-bold" dir="ltr" style="color:#bffb33;">Shein</span>.
+              גררו את כל הפריטים לעגלה - ולאחר מכן יהיה עליכם לפענח בעצמכם את קוד טביעת הרגל הסביבתית.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <h3 class="font-display font-bold text-base md:text-lg mb-3 flex items-center gap-2" style="color:#e1e4d1;">
+            <span class="material-symbols-outlined" style="color:#bffb33;">inventory_2</span>
+            פריטים זמינים
+          </h3>
+          <div id="r1ItemsBank" class="space-y-3">${r1ItemsHTML()}</div>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-base md:text-lg mb-3 flex items-center gap-2" style="color:#e1e4d1;">
+            <span class="material-symbols-outlined" style="color:#ffb4ab;">shopping_cart</span>
+            עגלת קנייה - <span dir="ltr">Shein</span>
+          </h3>
+          <div id="r1Cart" class="shopping-cart drop-zone min-h-[300px] p-4 md:p-6"
+               ondragover="event.preventDefault();this.classList.add('over');"
+               ondragleave="this.classList.remove('over');"
+               ondrop="r1Drop(event)">
+            <div class="h-full flex flex-col items-center justify-center text-center py-12">
+              <span class="material-symbols-outlined text-7xl opacity-40" style="color:#ffb4ab;">shopping_cart</span>
+              <p class="mt-3 text-sm md:text-base" style="color:#c3caae;">גררו פריטים לכאן</p>
+              <p class="text-xs mt-1" style="color:#8d947b;">(או הקליקו במובייל)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="r1AdvanceContainer"></div>
+    </div>
+  `;
+}
+
+function r1ItemsHTML() {
+  return r1Items.map((item, i) => {
+    const used = state.r1Cart.includes(item.id);
+    const dragAttrs = used ? '' : `draggable="true" ondragstart="r1DragStart(event,'${item.id}')" onclick="r1AddItem('${item.id}')"`;
+    return `
+      <div ${dragAttrs}
+           class="draggable glass-strong rounded-xl p-4 border-2 transition-all ${used ? 'opacity-30 grayscale cursor-not-allowed' : ''}"
+           style="border-color:${used ? '#434934' : item.color + '40'};">
+        <div class="flex items-center gap-4">
+          <div class="text-5xl">${item.emoji}</div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between mb-1">
+              <div class="font-bold text-base md:text-lg" style="color:#e1e4d1;">${item.name}</div>
+              <div class="font-mono text-xs" dir="ltr" style="color:#c3caae;">ID: ${String(i + 42).padStart(3, '0')}</div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 mb-2">
+              <span class="text-[10px] md:text-xs px-2 py-0.5 rounded-full flex items-center gap-1" style="background:rgba(0,128,149,0.2);color:#a9edff;border:1px solid rgba(118,212,234,0.45);">
+                <span class="material-symbols-outlined text-[12px] filled">local_shipping</span>משלוח מהיר
+              </span>
+              ${item.tag === 'fast' ? `
+                <span class="text-[10px] md:text-xs px-2 py-0.5 rounded-full flex items-center gap-1" style="background:rgba(255,166,43,0.15);color:#ffa62b;border:1px solid rgba(255,166,43,0.3);">
+                  <span class="material-symbols-outlined text-[12px] filled">schedule</span>5 ימים אצלך
+                </span>
+              ` : `
+                <span class="text-[10px] md:text-xs px-2 py-0.5 rounded-full flex items-center gap-1" style="background:rgba(255,107,107,0.15);color:#ff8a80;border:1px solid rgba(255,107,107,0.4);">
+                  <span class="material-symbols-outlined text-[12px] filled">local_fire_department</span>טרנדי
+                </span>
+              `}
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs md:text-sm">
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs filled" style="color:#76d4ea;">water_drop</span>
+                <span class="font-mono font-bold" dir="ltr" style="color:#76d4ea;">${item.water.toLocaleString()}L</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs filled" style="color:#ffb4ab;">cloud</span>
+                <span class="font-mono font-bold" dir="ltr" style="color:#ffb4ab;">${item.co2}kg CO₂</span>
+              </div>
+            </div>
+            ${used ?
+              '<div class="text-[10px] mt-1 flex items-center gap-1" style="color:#bffb33;"><span class="material-symbols-outlined text-xs filled">check_circle</span>בעגלה</div>' :
+              '<div class="text-[10px] mt-1 flex items-center gap-1" style="color:#bffb33;"><span class="material-symbols-outlined text-xs">drag_indicator</span>גררו לעגלה</div>'
+            }
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function r1DragStart(e, id) {
+  draggedItem = id;
+  if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move';
+  playSound('pickup');
+}
+
+function r1AddItem(id) {
+  if (state.r1Cart.includes(id)) return;
+  state.r1Cart.push(id);
+  playSound('drop');
+  r1UpdateUI();
+}
+
+function r1Drop(e) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('over');
+  if (draggedItem && !state.r1Cart.includes(draggedItem)) {
+    r1AddItem(draggedItem);
+  }
+  draggedItem = null;
+}
+
+function r1RemoveItem(id) {
+  state.r1Cart = state.r1Cart.filter(x => x !== id);
+  playSound('click');
+  r1UpdateUI();
+}
+
+function r1UpdateUI() {
+  if (state.r1Stage !== 'cart') return;
+
+  const totalWater = state.r1Cart.reduce((s, id) => s + r1Items.find(i => i.id === id).water, 0);
+  const totalCo2 = state.r1Cart.reduce((s, id) => s + r1Items.find(i => i.id === id).co2, 0);
+  document.getElementById('r1WaterTotal').textContent = totalWater.toLocaleString();
+  document.getElementById('r1Co2Total').textContent = totalCo2;
+  document.getElementById('r1WaterFill').style.width = Math.min(100, (totalWater / R1_TOTAL_WATER) * 100) + '%';
+  document.getElementById('r1Co2Fill').style.width = Math.min(100, (totalCo2 / R1_TOTAL_CO2) * 100) + '%';
+
+  document.getElementById('r1ItemsBank').innerHTML = r1ItemsHTML();
+
+  const cart = document.getElementById('r1Cart');
+  if (state.r1Cart.length === 0) {
+    cart.innerHTML = '<div class="h-full flex flex-col items-center justify-center text-center py-12"><span class="material-symbols-outlined text-7xl opacity-40" style="color:#ffb4ab;">shopping_cart</span><p class="mt-3 text-sm md:text-base" style="color:#c3caae;">גררו פריטים לכאן</p><p class="text-xs mt-1" style="color:#8d947b;">(או הקליקו במובייל)</p></div>';
+  } else {
+    let html = '<div class="space-y-2">';
+    state.r1Cart.forEach(id => {
+      const item = r1Items.find(i => i.id === id);
+      html += `
+        <div class="animate-scaleIn glass-panel rounded-lg p-3 flex items-center gap-3" style="border-right:3px solid ${item.color};">
+          <div class="text-3xl">${item.emoji}</div>
+          <div class="flex-1">
+            <div class="font-bold text-sm" style="color:#e1e4d1;">${item.name}</div>
+            <div class="font-mono text-xs" dir="ltr" style="color:#c3caae;">${item.water.toLocaleString()}L · ${item.co2}kg CO₂</div>
+          </div>
+          <button onclick="r1RemoveItem('${id}')" class="opacity-60 hover:opacity-100 transition-opacity" style="color:#ffb4ab;">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+      `;
+    });
+    if (state.r1Cart.length < 3) {
+      html += `<div class="text-center text-xs mt-3" style="color:#c3caae;">עוד <span class="font-mono" dir="ltr">${3 - state.r1Cart.length}</span> פריטים נדרשים...</div>`;
+    }
+    html += '</div>';
+    cart.innerHTML = html;
+  }
+
+  // Show "stock-out" notification when all 3 items in cart
+  const advance = document.getElementById('r1AdvanceContainer');
+  if (state.r1Cart.length === 3) {
+    playSound('error');
+    advance.innerHTML = `
+      <div class="animate-scaleIn glass-strong rounded-xl p-5 md:p-6 mb-4 border-2" style="border-color:#ffa62b;background:linear-gradient(135deg,rgba(255,166,43,0.1),rgba(255,180,171,0.05));">
+        <div class="flex items-start gap-3 mb-4">
+          <span class="material-symbols-outlined filled text-3xl animate-pulse" style="color:#ffa62b;">inventory_2</span>
+          <div class="flex-1">
+            <div class="font-display font-bold text-base md:text-lg mb-1" style="color:#ffa62b;">עדכון מלאי - הזמנה מ-Shein</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              <span class="font-bold" style="color:#ffa62b;">2 פריטים שהזמנת אזלו מהמלאי</span> ולא יישלחו: <span style="text-decoration:line-through;opacity:0.7;">שמלה 👗, מכנסיים 👖</span>
+            </p>
+            <p class="text-sm md:text-base mt-2" style="color:#c3caae;">
+              הפריט שיגיע אליך: <span class="font-bold" style="color:#76d4ea;">חולצה 👕</span>
+            </p>
+          </div>
+        </div>
+        <div class="border-t pt-4 mt-3" style="border-color:rgba(255,166,43,0.2);">
+          <p class="text-sm md:text-base mb-3" style="color:#c3caae;">
+            כדי לפתוח את החדר הבא - חשבו את <span class="font-bold" style="color:#bffb33;">קוד טביעת הרגל</span> עבור החולצה.
+          </p>
+          <button onclick="r1AdvanceToCalculate()" class="w-full px-6 md:px-8 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong" style="color:#445e00;">
+            <span>המשך לפיצוח הקוד</span>
+            <span class="material-symbols-outlined filled">key</span>
+          </button>
+        </div>
+      </div>
+    `;
+  } else {
+    advance.innerHTML = '';
+  }
+}
+
+// ========== ROOM 1 - STAGE 2: CALCULATE ==========
+function r1AdvanceToCalculate() {
+  playSound('click');
+  state.r1Stage = 'calculate';
+  state.r1Attempts = 0;
+  r1RenderStageCalculate();
+}
+
+function r1RenderStageCalculate() {
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-3xl mx-auto">
+      ${r1RoomHeader()}
+
+      <div class="glass-panel rounded-xl p-4 md:p-5 mb-6" style="border-right:4px solid #ffb4ab;">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled" style="color:#ffb4ab;">key</span>
+          <div class="flex-1">
+            <div class="font-bold text-sm md:text-base mb-1" style="color:#ffb4ab;">פיצוח קוד טביעת הרגל</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              החולצה תגיע אליכם. <span class="font-bold" style="color:#bffb33;">חשבו בעצמכם</span> את היחס בין המים לפליטות הפחמן שלה - זה יחשוף את קוד הפתיחה.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-strong rounded-2xl p-5 md:p-7 mb-6 border-2 animate-scaleIn" style="border-color:rgba(118,212,234,0.4);background:linear-gradient(135deg,rgba(118,212,234,0.06),rgba(0,128,149,0.03));">
+        <div class="flex items-center gap-4 mb-5">
+          <div class="text-6xl md:text-7xl">👕</div>
+          <div class="flex-1">
+            <div class="font-display font-bold text-lg md:text-2xl" style="color:#e1e4d1;">חולצה - הפריט שמגיע</div>
+            <div class="text-xs md:text-sm font-mono" dir="ltr" style="color:#8d947b;">ID: 043</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 md:gap-4">
+          <div class="rounded-xl p-4 md:p-5 text-center border-2" style="background:rgba(118,212,234,0.08);border-color:rgba(118,212,234,0.4);">
+            <div class="flex items-center justify-center gap-1.5 mb-2 text-xs md:text-sm" style="color:#76d4ea;">
+              <span class="material-symbols-outlined filled text-base">water_drop</span>
+              <span class="font-bold">מים בייצור</span>
+            </div>
+            <div class="font-mono font-bold text-2xl md:text-4xl mb-1" dir="ltr" style="color:#76d4ea;">${R1_SHIRT_WATER.toLocaleString()}</div>
+            <div class="text-xs" dir="ltr" style="color:#c3caae;">L (ליטר)</div>
+          </div>
+          <div class="rounded-xl p-4 md:p-5 text-center border-2" style="background:rgba(255,180,171,0.08);border-color:rgba(255,180,171,0.4);">
+            <div class="flex items-center justify-center gap-1.5 mb-2 text-xs md:text-sm" style="color:#ffb4ab;">
+              <span class="material-symbols-outlined filled text-base">cloud</span>
+              <span class="font-bold">פליטת פחמן</span>
+            </div>
+            <div class="font-mono font-bold text-2xl md:text-4xl mb-1" dir="ltr" style="color:#ffb4ab;">${R1_SHIRT_CO2}</div>
+            <div class="text-xs" dir="ltr" style="color:#c3caae;">kg CO₂</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="r1Q3" class="glass-strong rounded-xl p-5 md:p-6 border-2 transition-all mb-4" style="border-color:rgba(191,251,51,0.4);">
+        <label class="block">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="font-mono font-bold rounded-full w-8 h-8 flex items-center justify-center" style="background:rgba(191,251,51,0.2);color:#bffb33;">?</span>
+            <span class="text-base md:text-lg font-bold" style="color:#e1e4d1;">הקוד = מים ÷ פליטת פחמן</span>
+          </div>
+          <div class="text-center mb-3 font-mono text-xl md:text-2xl" dir="ltr" style="color:#c3caae;">
+            <span style="color:#76d4ea;">${R1_SHIRT_WATER.toLocaleString()}</span>
+            <span class="mx-2" style="color:#bffb33;">÷</span>
+            <span style="color:#ffb4ab;">${R1_SHIRT_CO2}</span>
+            <span class="mx-2" style="color:#bffb33;">=</span>
+            <span style="color:#bffb33;">?</span>
+          </div>
+          <input type="number" id="r1InputCode" inputmode="numeric"
+            class="w-full px-4 py-3 md:py-4 rounded-lg font-mono text-2xl md:text-3xl text-center transition-all font-bold"
+            dir="ltr"
+            style="background:#191d11;border:2px solid #434934;color:#bffb33;outline:none;letter-spacing:0.15em;"
+            onfocus="this.style.borderColor='#bffb33';"
+            onblur="this.style.borderColor='#434934';"
+            onkeydown="if(event.key==='Enter') r1ValidateCode();"
+            placeholder="___">
+        </label>
+      </div>
+
+      <div id="r1Feedback" class="mb-4"></div>
+
+      <button onclick="r1ValidateCode()" id="r1ValidateBtn"
+        class="w-full px-6 md:px-8 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong" style="color:#445e00;">
+        <span class="material-symbols-outlined filled">verified</span>
+        <span>אמתו את הקוד</span>
+      </button>
+
+      <div class="text-center mt-4">
+        <button onclick="r1BackToCart()" class="text-xs md:text-sm hover:underline" style="color:#8d947b;">
+          ← חזור לעגלה
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function r1BackToCart() {
+  playSound('click');
+  state.r1Stage = 'cart';
+  r1RenderStageCart();
+  setTimeout(() => r1UpdateUI(), 50);
+}
+
+function r1ValidateCode() {
+  const code = parseInt(document.getElementById('r1InputCode').value, 10);
+  const codeOk = code === R1_CODE;
+  const codeField = document.getElementById('r1Q3');
+
+  const feedback = document.getElementById('r1Feedback');
+
+  if (codeOk) {
+    playSound('success');
+    codeField.style.borderColor = '#bffb33';
+    codeField.style.boxShadow = '0 0 25px rgba(191,251,51,0.5)';
+    feedback.innerHTML = `
+      <div class="animate-success glass-strong rounded-xl p-4 md:p-5 border-2" style="border-color:#bffb33;background:rgba(191,251,51,0.08);">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined filled text-3xl" style="color:#bffb33;">check_circle</span>
+          <div class="flex-1">
+            <div class="font-bold text-base md:text-lg" style="color:#bffb33;">קוד פוענח בהצלחה!</div>
+            <div class="text-sm md:text-base" style="color:#c3caae;">
+              <span class="font-mono font-bold" dir="ltr" style="color:#bffb33;">${R1_SHIRT_WATER.toLocaleString()} ÷ ${R1_SHIRT_CO2} = ${R1_CODE}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.getElementById('r1ValidateBtn').disabled = true;
+    document.getElementById('r1ValidateBtn').style.opacity = '0.5';
+    setTimeout(() => r1AdvanceToReveal(), 1400);
+    return;
+  }
+
+  // Wrong - generate hint
+  state.r1Attempts++;
+  playSound('error');
+  if (!isNaN(code)) {
+    codeField.style.borderColor = '#ffb4ab';
+    codeField.style.boxShadow = '0 0 15px rgba(255,180,171,0.4)';
+  }
+  document.querySelectorAll('#r1Q3, #r1ValidateBtn').forEach(el => {
+    el.classList.add('animate-shake');
+    setTimeout(() => el.classList.remove('animate-shake'), 500);
+  });
+
+  let hintHTML = '';
+  if (state.r1Attempts < 2) {
+    // Basic hint - first attempt
+    let msg = 'בדקו את החישוב שוב.';
+    if (isNaN(code)) msg = 'הזינו תוצאה מספרית בתיבה.';
+    else if (code === R1_SHIRT_WATER * R1_SHIRT_CO2) msg = 'שימו לב - זה חילוק (÷) ולא כפל.';
+    else if (code === R1_SHIRT_WATER + R1_SHIRT_CO2) msg = 'זה לא חיבור - זה חילוק (÷).';
+    else if (code === R1_SHIRT_WATER - R1_SHIRT_CO2) msg = 'זה לא חיסור - זה חילוק (÷).';
+
+    hintHTML = `
+      <div class="animate-scaleIn glass-strong rounded-xl p-4 md:p-5 border-2" style="border-color:#ffb4ab;background:rgba(255,180,171,0.08);">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined filled text-2xl" style="color:#ffb4ab;">error</span>
+          <div class="flex-1">
+            <div class="font-bold text-sm md:text-base" style="color:#ffb4ab;">לא מדויק - ניסיון ${state.r1Attempts} מתוך 2</div>
+            <div class="text-sm" style="color:#c3caae;">${msg}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  } else {
+    // Enhanced visual hint - after 2+ wrong attempts
+    hintHTML = `
+      <div class="animate-scaleIn glass-strong rounded-xl p-4 md:p-5 border-2" style="border-color:#ffa62b;background:rgba(255,166,43,0.08);">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled text-3xl" style="color:#ffa62b;">tips_and_updates</span>
+          <div class="flex-1">
+            <div class="font-bold text-base md:text-lg mb-2" style="color:#ffa62b;">רמז ויזואלי</div>
+            <p class="text-sm mb-3" style="color:#c3caae;">חזרו על תרגיל החילוק צעד אחר צעד:</p>
+            <div class="space-y-2 text-sm md:text-base">
+              <div class="flex items-center gap-2 p-3 rounded" style="background:rgba(118,212,234,0.1);border:1px dashed rgba(118,212,234,0.4);">
+                <span class="material-symbols-outlined filled" style="color:#76d4ea;">water_drop</span>
+                <span style="color:#c3caae;">כמה ליטרי מים בחולצה?</span>
+                <span class="font-mono font-bold ml-auto" dir="ltr" style="color:#76d4ea;">${R1_SHIRT_WATER.toLocaleString()} L</span>
+              </div>
+              <div class="flex items-center gap-2 p-3 rounded" style="background:rgba(255,180,171,0.1);border:1px dashed rgba(255,180,171,0.4);">
+                <span class="material-symbols-outlined filled" style="color:#ffb4ab;">cloud</span>
+                <span style="color:#c3caae;">כמה ק״ג פחמן?</span>
+                <span class="font-mono font-bold ml-auto" dir="ltr" style="color:#ffb4ab;">${R1_SHIRT_CO2} kg</span>
+              </div>
+              <div class="flex items-center gap-2 p-3 rounded" style="background:rgba(191,251,51,0.1);border:1px dashed rgba(191,251,51,0.4);">
+                <span class="material-symbols-outlined filled" style="color:#bffb33;">calculate</span>
+                <span style="color:#c3caae;">מים ÷ פחמן:</span>
+                <span class="font-mono font-bold ml-auto" dir="ltr" style="color:#bffb33;">${R1_SHIRT_WATER.toLocaleString()} ÷ ${R1_SHIRT_CO2} = ?</span>
+              </div>
+            </div>
+            <p class="text-xs mt-3 italic" style="color:#8d947b;">💡 השתמשו במחשבון אם צריך - הדיוק חשוב יותר ממהירות.</p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  feedback.innerHTML = hintHTML;
+}
+
+// ========== ROOM 1 - STAGE 3: REVEAL ==========
+function r1AdvanceToReveal() {
+  state.r1Stage = 'reveal';
+  r1RenderStageReveal();
+}
+
+function r1RenderStageReveal() {
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-4xl mx-auto">
+      ${r1RoomHeader()}
+
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center gap-3 glass-strong rounded-full px-6 py-3 mb-4 glow-strong border-2 animate-pulse-glow" style="border-color:#bffb33;">
+          <span class="material-symbols-outlined filled text-2xl" style="color:#bffb33;">lock_open</span>
+          <span class="font-display font-bold text-base md:text-xl" style="color:#bffb33;">מנעול ראשון נפתח</span>
+        </div>
+        <h2 class="font-display font-bold text-2xl md:text-4xl mb-2" style="color:#e1e4d1;">המחיר הנסתר של חולצה אחת</h2>
+        <p class="text-sm md:text-base" style="color:#c3caae;">מה <span class="font-bold" style="color:#bffb33;">המספרים האלו</span> אומרים בעולם האמיתי?</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
+        <div class="glass-strong rounded-2xl p-5 md:p-6 border-2 animate-scaleIn" style="border-color:rgba(118,212,234,0.4);background:linear-gradient(135deg,rgba(118,212,234,0.08),rgba(0,128,149,0.04));">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined filled text-3xl md:text-4xl" style="color:#76d4ea;">water_drop</span>
+            <div>
+              <div class="font-mono font-bold text-2xl md:text-4xl" dir="ltr" style="color:#76d4ea;">${R1_SHIRT_WATER.toLocaleString()} L</div>
+              <div class="text-xs md:text-sm" style="color:#c3caae;">מים בייצור החולצה</div>
+            </div>
+          </div>
+          <div class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+            <p class="mb-2">המים האלו שווים בערך ל:</p>
+            <div class="flex items-start gap-2 mb-2">
+              <span class="text-xl">🚿</span>
+              <span>שתיית מים של <span class="font-bold" style="color:#76d4ea;">תלמיד/ה</span> במשך כ-<span class="font-mono font-bold" dir="ltr" style="color:#76d4ea;">3 שנים</span></span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-xl">🛁</span>
+              <span><span class="font-bold" style="color:#76d4ea;">22 אמבטיות</span> מלאות עד הקצה</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-strong rounded-2xl p-5 md:p-6 border-2 animate-scaleIn" style="border-color:rgba(255,180,171,0.4);background:linear-gradient(135deg,rgba(255,180,171,0.08),rgba(255,166,43,0.04));animation-delay:0.15s;">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="material-symbols-outlined filled text-3xl md:text-4xl" style="color:#ffb4ab;">cloud</span>
+            <div>
+              <div class="font-mono font-bold text-2xl md:text-4xl" dir="ltr" style="color:#ffb4ab;">${R1_SHIRT_CO2} kg</div>
+              <div class="text-xs md:text-sm" style="color:#c3caae;">פליטת CO₂ בייצור</div>
+            </div>
+          </div>
+          <div class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+            <p class="mb-2">הפליטה הזו שווה בערך ל:</p>
+            <div class="flex items-start gap-2 mb-2">
+              <span class="text-xl">🚗</span>
+              <span>נסיעה של <span class="font-bold" style="color:#ffb4ab;">25 ק״מ</span> ברכב משפחתי</span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="text-xl">🌳</span>
+              <span>הכמות ש<span class="font-bold" style="color:#ffb4ab;">עץ בוגר אחד</span> סופג בכ-<span class="font-mono font-bold" dir="ltr" style="color:#ffb4ab;">3 חודשים</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-panel rounded-xl p-4 md:p-5 mb-6 border-2 animate-scaleIn" style="border-color:rgba(255,166,43,0.4);background:rgba(255,166,43,0.05);animation-delay:0.25s;">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled text-2xl flex-shrink-0" style="color:#ffa62b;">warning</span>
+          <div class="flex-1">
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              <span class="font-bold" style="color:#ffa62b;">שימו לב:</span> אלו הנתונים של <span class="font-bold">פריט אחד</span>. תעשיית האופנה המהירה מייצרת מיליארדי פריטים כאלו בשנה.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-strong rounded-2xl p-5 md:p-6 mb-6 border-2 animate-scaleIn" style="border-color:rgba(191,251,51,0.5);background:linear-gradient(135deg,rgba(191,251,51,0.08),rgba(160,216,0,0.04));animation-delay:0.4s;">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled text-3xl md:text-4xl flex-shrink-0" style="color:#bffb33;">waves</span>
+          <div class="flex-1">
+            <div class="font-display font-bold text-base md:text-lg mb-2" style="color:#bffb33;">חוף הכרמל</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              סיבי הפוליאסטר בחולצה הזו נשטפים מהמכבסה בצורת <span class="font-bold" style="color:#bffb33;">מיקרו-פלסטיק</span>, מגיעים בנחלים לים ובסופו של דבר אל חופי <span class="font-bold" style="color:#bffb33;">דור-הבונים והכרמל</span> שליד בית הספר. כל בגד שלא נצרך - הוא חוף נקי יותר לדור הבא.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="r1Submit()"
+        class="w-full px-6 md:px-8 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong" style="color:#445e00;">
+        <span>המשך לחדר הבא</span>
+        <span class="material-symbols-outlined filled">arrow_back</span>
+      </button>
+    </div>
+  `;
+}
+
+function r1Submit() {
+  playSound('roomComplete');
+  state.roomsCompleted[0] = true;
+  setTimeout(() => transition('room2', 'נכנסים לחדר 2...'), 600);
+}
+
+// ========== ROOM 2: CLIMATE ==========
+// תחנת ניטור הכרמל - חוויה אינטגרטיבית של 3 שלבים
+const r2Chain = [
+  {
+    id: 1, emoji: '🏭', short: 'פליטות',
+    text: 'פליטות תעשייה ומכוניות',
+    filled: true, color: '#ffa62b'
+  },
+  {
+    id: 2, emoji: '☁️', short: 'אטמוספירה',
+    text: 'הצטברות באטמוספירה ולכידת חום',
+    filled: false, color: '#76d4ea',
+    question: 'מה קורה לגזי החממה אחרי שנפלטו לאוויר?',
+    options: [
+      { text: 'הם מצטברים באטמוספירה ולוכדים חום', correct: true },
+      { text: 'הם חוזרים לאדמה כגשם חומצי', correct: false },
+      { text: 'הם מתפזרים בחלל החיצון ונעלמים', correct: false }
+    ],
+    explanation: 'גזי החממה לא נעלמים. הם מצטברים באטמוספירה ופועלים כמו שמיכת זכוכית שלוכדת את החום של השמש.'
+  },
+  {
+    id: 3, emoji: '🌡️', short: 'התחממות',
+    text: 'התחממות כדור הארץ',
+    filled: false, color: '#ff8c5a',
+    question: 'כשגזי החממה לוכדים חום באטמוספירה - מה קורה לכדור הארץ?',
+    options: [
+      { text: 'הלחות באוויר עולה משמעותית', correct: false },
+      { text: 'מסלול כדור הארץ סביב השמש משתנה', correct: false },
+      { text: 'הטמפרטורה הממוצעת של כדור הארץ עולה', correct: true }
+    ],
+    explanation: 'החום הלכוד גורם לטמפרטורה הממוצעת של כדור הארץ לעלות בהדרגה. זה מה שנקרא "התחממות גלובלית".'
+  },
+  {
+    id: 4, emoji: '🧊', short: 'קרחונים',
+    text: 'המסת קרחונים בקטבים',
+    filled: false, color: '#a9edff',
+    question: 'אחרי שהטמפרטורה עולה - מה הצעד הבא בשרשרת?',
+    options: [
+      { text: 'סופות חול בים התיכון', correct: false },
+      { text: 'הקרחונים בקטבים מתחילים להמיס', correct: true },
+      { text: 'רעידות אדמה תכופות יותר', correct: false }
+    ],
+    explanation: 'החום העולה מתחיל להמיס את שכבות הקרח בגרינלנד ובאנטארקטיקה. המים האלו מצטרפים לאוקיינוסים.'
+  },
+  {
+    id: 5, emoji: '🌊', short: 'הצפה',
+    text: 'הצפת חוף הכרמל',
+    filled: true, color: '#76d4ea'
+  }
+];
+
+const r2Actions = [
+  {
+    id: 'renewable', emoji: '☀️', name: 'מעבר לאנרגיה מתחדשת',
+    desc: 'שמש ורוח במקום פחם וגז', cost: 50, impact: 50,
+    interventionNode: 1, color: '#bffb33'
+  },
+  {
+    id: 'trees', emoji: '🌳', name: 'נטיעת 50 מיליון עצים',
+    desc: 'יערות שסופגים פחמן מהאוויר', cost: 30, impact: 30,
+    interventionNode: 2, color: '#a4de02'
+  },
+  {
+    id: 'electric', emoji: '🚗', name: 'מעבר לרכבים חשמליים',
+    desc: 'הפסקת שריפת דלק ברכבים', cost: 20, impact: 20,
+    interventionNode: 1, color: '#76d4ea'
+  }
+];
+
+const R2_BUDGET = 70;
+const R2_REQUIRED_IMPACT = 70;
+
+function r2RoomHeader() {
+  return `
+    <div class="flex items-center gap-4 mb-4">
+      <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl glass-strong border-2 flex items-center justify-center text-3xl md:text-4xl" style="border-color:rgba(118,212,234,0.4);">🌊</div>
+      <div class="flex-1">
+        <div class="font-mono text-xs md:text-sm tracking-widest" dir="ltr" style="color:#76d4ea;">ROOM 02 / 04</div>
+        <h2 class="font-display font-bold text-2xl md:text-4xl tracking-tight" style="color:#76d4ea;">תחנת ניטור הכרמל</h2>
+        <p class="text-sm md:text-base" style="color:#c3caae;">שרשרת הסיבה והתוצאה של משבר האקלים</p>
+      </div>
+    </div>
+  `;
+}
+
+// === BEACH VIEW (live, responsive to state) ===
+function r2GetUsedBudget() {
+  return r2Actions.filter(a => state.r2Actions[a.id]).reduce((sum, a) => sum + a.cost, 0);
+}
+
+function r2GetCurrentImpact() {
+  return r2Actions.filter(a => state.r2Actions[a.id]).reduce((sum, a) => sum + a.impact, 0);
+}
+
+function r2GetSeaLevel() {
+  if (state.r2Stage === 'chain') {
+    // Sea rises gradually with each unlocked node (visible cause-effect)
+    const filled = Object.values(state.r2NodesCorrect).filter(v => v).length;
+    // 0 nodes: calm (22%), 1: rising (35%), 2: concerning (50%), 3: critical (70%)
+    return [22, 35, 50, 70][filled];
+  }
+  if (state.r2Stage === 'transition') return 70;
+  // Stage 'console' - chain is active, console actions reduce sea level
+  const impact = r2GetCurrentImpact();
+  return Math.max(22, 70 - (impact / 100) * 48);
+}
+
+function r2GetClimateStatus() {
+  if (state.r2Stage === 'chain') {
+    const filled = Object.values(state.r2NodesCorrect).filter(v => v).length;
+    if (filled === 0) return { label: 'תקין', color: '#76d4ea', bg: 'rgba(118,212,234,0.15)' };
+    if (filled === 1) return { label: 'אזהרה', color: '#ffa62b', bg: 'rgba(255,166,43,0.15)' };
+    if (filled === 2) return { label: 'בסכנה', color: '#ff8c5a', bg: 'rgba(255,140,90,0.15)' };
+    return { label: 'קריטי', color: '#ffb4ab', bg: 'rgba(255,180,171,0.15)' };
+  }
+  if (state.r2Stage === 'transition') return { label: 'קריטי', color: '#ffb4ab', bg: 'rgba(255,180,171,0.15)' };
+  // Console stage
+  const impact = r2GetCurrentImpact();
+  if (impact >= 70) return { label: 'ניצל', color: '#bffb33', bg: 'rgba(191,251,51,0.15)' };
+  if (impact >= 50) return { label: 'יציב', color: '#76d4ea', bg: 'rgba(118,212,234,0.15)' };
+  if (impact >= 30) return { label: 'בסכנה', color: '#ffa62b', bg: 'rgba(255,166,43,0.15)' };
+  return { label: 'הוצף', color: '#ffb4ab', bg: 'rgba(255,180,171,0.15)' };
+}
+
+function r2BeachView() {
+  const seaLevel = r2GetSeaLevel();
+  const status = r2GetClimateStatus();
+  // Calculate "danger level" 0-1 based on stage and progress
+  let danger = 0;
+  if (state.r2Stage === 'chain') {
+    const filled = Object.values(state.r2NodesCorrect).filter(v => v).length;
+    danger = filled / 3; // 0, 0.33, 0.66, 1.0
+  } else if (state.r2Stage === 'transition') {
+    danger = 1;
+  } else {
+    // Console stage: danger reduces with impact
+    const impact = r2GetCurrentImpact();
+    danger = Math.max(0, 1 - impact / 100);
+  }
+
+  // Interpolate sky colors based on danger
+  const skyTopR = Math.round(135 + danger * (-15));  // 135 -> 120
+  const skyTopG = Math.round(180 + danger * (-100)); // 180 -> 80
+  const skyTopB = Math.round(210 + danger * (-150)); // 210 -> 60
+  const skyBotR = Math.round(40 + danger * (140));   // 40 -> 180
+  const skyBotG = Math.round(90 + danger * (0));     // 90 -> 90
+  const skyBotB = Math.round(140 + danger * (-70));  // 140 -> 70
+
+  const skyTop = `${skyTopR},${skyTopG},${skyTopB}`;
+  const skyBot = `${skyBotR},${skyBotG},${skyBotB}`;
+  const sunColor = danger > 0.5 ? '#ff5722' : (danger > 0.2 ? '#ffa726' : '#ffd54f');
+  const sunGlow = danger > 0.5 ? '#ff8a50' : (danger > 0.2 ? '#ffb74d' : '#ffeb3b');
+  const chainActive = danger >= 0.5; // For cloud display
+
+  return `
+    <div class="relative w-full rounded-xl overflow-hidden border-2 transition-all" style="border-color:${status.color};box-shadow:0 0 25px ${status.color}33;height:200px;">
+      <div class="absolute inset-0 transition-all duration-700"
+           style="background:linear-gradient(to bottom,rgba(${skyTop},0.95) 0%,rgba(${skyBot},0.95) 100%);"></div>
+
+      <div class="absolute transition-all duration-700"
+           style="top:14px;left:75%;width:48px;height:48px;border-radius:50%;background:radial-gradient(circle,${sunColor},${sunGlow}cc);box-shadow:0 0 30px ${sunGlow};"></div>
+
+      ${chainActive ? `
+        <div class="absolute" style="top:30px;right:15%;font-size:24px;opacity:0.7;animation:pulse-glow 2s infinite;">☁️</div>
+        <div class="absolute" style="top:50px;right:35%;font-size:18px;opacity:0.6;">☁️</div>
+      ` : `
+        <div class="absolute" style="top:30px;right:15%;font-size:20px;opacity:0.4;">☁️</div>
+      `}
+
+      <div class="absolute bottom-0 left-0 right-0 transition-all duration-700"
+           style="height:${seaLevel}%;background:linear-gradient(to top,rgba(0,40,80,0.95),rgba(${chainActive ? '60,40,30' : '0,90,140'},0.7));overflow:hidden;">
+        <div class="absolute top-0 left-0 right-0" style="height:3px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);animation:shimmer 3s linear infinite;"></div>
+        <div class="absolute top-2 left-0 right-0" style="height:1px;background:rgba(255,255,255,0.3);"></div>
+      </div>
+
+      <div class="absolute" style="bottom:${Math.max(0, seaLevel - 8)}%;left:10%;width:80%;height:12px;background:linear-gradient(to bottom,#d4a574,#a87b4a);opacity:${seaLevel > 55 ? 0.4 : 1};transition:opacity 0.5s;"></div>
+
+      <div class="absolute transition-all duration-700" style="bottom:${Math.max(2, seaLevel - 5)}%;left:38%;font-size:32px;${seaLevel > 50 ? 'opacity:0.5;filter:grayscale(0.5);' : ''}">🏫</div>
+
+      <div class="absolute top-2 right-2 px-2 py-1 rounded font-mono text-[10px] md:text-xs glass-panel" style="color:${status.color};">חוף הכרמל</div>
+
+      <div class="absolute top-2 left-2 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] md:text-xs font-bold" style="background:${status.bg};color:${status.color};border:1px solid ${status.color}66;">
+        <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:${status.color};"></span>
+        ${status.label.toUpperCase()}
+      </div>
+
+      <div class="absolute bottom-2 right-2 font-mono text-[10px] md:text-xs px-2 py-1 rounded glass-panel" dir="ltr" style="color:${status.color};">
+        SEA LEVEL: ${Math.round(seaLevel)}%
+      </div>
+    </div>
+  `;
+}
+
+// === CHAIN VIEW ===
+function r2ChainNodeHTML(node, idx) {
+  const isFilled = node.filled || state.r2NodesCorrect[node.id];
+  const isActive = state.r2ActiveQuestion === node.id;
+  const isJustUnlocked = state.r2JustUnlocked === node.id;
+  const chainComplete = state.r2Stage !== 'chain';
+
+  const baseStyle = isFilled
+    ? `background:rgba(${node.id === 1 ? '255,166,43' : node.id === 5 ? '118,212,234' : '191,251,51'},0.12);border-color:${node.color};box-shadow:0 0 ${chainComplete ? '20px' : '12px'} ${node.color}66;`
+    : `background:rgba(255,255,255,0.04);border-color:rgba(255,180,171,0.5);border-style:dashed;`;
+
+  const clickAttr = !isFilled ? `onclick="r2OpenQuestion(${node.id})"` : '';
+  const cursorAttr = !isFilled ? 'cursor:pointer;' : '';
+  const animClass = isJustUnlocked ? 'animate-nodeUnlock' : (isActive ? 'animate-pulse-glow' : '');
+
+  return `
+    <div ${clickAttr}
+         class="r2-node relative rounded-xl p-3 md:p-4 border-2 transition-all flex flex-col items-center justify-center text-center ${animClass}"
+         style="${baseStyle}${cursorAttr};min-height:90px;">
+      ${isJustUnlocked ? '<div class="absolute -top-3 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full text-[10px] font-bold animate-pulse" style="background:#bffb33;color:#003640;white-space:nowrap;">✓ נפתח!</div>' : ''}
+      <div class="text-3xl md:text-4xl mb-1 ${chainComplete && isFilled ? 'animate-pulse' : ''}" style="${isFilled ? '' : 'opacity:0.3;'}">${isFilled ? node.emoji : '❓'}</div>
+      <div class="text-[10px] md:text-xs font-bold leading-tight" style="color:${isFilled ? node.color : '#ffb4ab'};">
+        ${isFilled ? node.short : 'לחצו לפענוח'}
+      </div>
+      <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono font-bold" style="background:${isFilled ? node.color : '#434934'};color:${isFilled ? '#003640' : '#8d947b'};">${idx + 1}</div>
+    </div>
+  `;
+}
+
+function r2ChainConnector(idx) {
+  const leftNode = r2Chain[idx];
+  const rightNode = r2Chain[idx + 1];
+  const leftFilled = leftNode.filled || state.r2NodesCorrect[leftNode.id];
+  const rightFilled = rightNode.filled || state.r2NodesCorrect[rightNode.id];
+  const active = leftFilled && rightFilled;
+  const chainComplete = state.r2Stage !== 'chain';
+
+  const color = active ? (chainComplete ? '#bffb33' : '#76d4ea') : '#434934';
+  const flowAnim = chainComplete && active ? 'animation:shimmer 2s linear infinite;' : '';
+
+  return `
+    <div class="hidden md:flex flex-1 items-center justify-center px-1">
+      <div class="relative h-1 w-full rounded-full overflow-hidden" style="background:#1d2115;">
+        <div class="absolute inset-0 transition-all duration-500" style="background:linear-gradient(90deg,transparent,${color},transparent);${flowAnim}"></div>
+      </div>
+    </div>
+    <div class="flex md:hidden justify-center w-full py-1">
+      <span class="material-symbols-outlined" style="color:${color};">arrow_downward</span>
+    </div>
+  `;
+}
+
+function r2RenderChainSection() {
+  let html = '<div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] gap-2 md:gap-1 items-center">';
+  r2Chain.forEach((node, idx) => {
+    html += r2ChainNodeHTML(node, idx);
+    if (idx < r2Chain.length - 1) {
+      html += r2ChainConnector(idx);
+    }
+  });
+  html += '</div>';
+  return html;
+}
+
+// === QUESTION MODAL ===
+function r2RenderQuestion() {
+  if (state.r2ActiveQuestion === null) return '';
+  const node = r2Chain.find(n => n.id === state.r2ActiveQuestion);
+  if (!node) return '';
+
+  return `
+    <div class="animate-scaleIn glass-strong rounded-xl p-5 md:p-6 mb-4 border-2 mt-4" style="border-color:${node.color};background:linear-gradient(135deg,rgba(118,212,234,0.06),transparent);">
+      <div class="flex items-start gap-3 mb-4">
+        <div class="text-3xl md:text-4xl">${node.emoji}</div>
+        <div class="flex-1">
+          <div class="text-xs font-mono mb-1" dir="ltr" style="color:${node.color};">NODE ${node.id} / DECRYPT</div>
+          <div class="font-display font-bold text-base md:text-lg leading-tight" style="color:#e1e4d1;">${node.question}</div>
+        </div>
+        <button onclick="r2CloseQuestion()" class="opacity-60 hover:opacity-100" style="color:#c3caae;">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="space-y-2.5">
+        ${node.options.map((opt, idx) => `
+          <button onclick="r2AnswerQuestion(${node.id}, ${idx})"
+            class="w-full text-right px-4 py-3 rounded-lg border-2 transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center gap-3"
+            style="background:rgba(25,29,17,0.8);border-color:rgba(141,148,123,0.3);color:#e1e4d1;"
+            onmouseover="this.style.borderColor='${node.color}';this.style.background='rgba(118,212,234,0.08)';"
+            onmouseout="this.style.borderColor='rgba(141,148,123,0.3)';this.style.background='rgba(25,29,17,0.8)';">
+            <span class="font-mono font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0" style="background:rgba(118,212,234,0.15);color:${node.color};">${String.fromCharCode(1488 + idx)}</span>
+            <span class="text-sm md:text-base flex-1">${opt.text}</span>
+          </button>
+        `).join('')}
+      </div>
+
+      <div id="r2QFeedback" class="mt-3"></div>
+    </div>
+  `;
+}
+
+function r2OpenQuestion(nodeId) {
+  if (state.r2NodesCorrect[nodeId]) return;
+  playSound('click');
+  state.r2ActiveQuestion = nodeId;
+  r2Render();
+}
+
+function r2CloseQuestion() {
+  playSound('click');
+  state.r2ActiveQuestion = null;
+  r2Render();
+}
+
+function r2AnswerQuestion(nodeId, optionIdx) {
+  const node = r2Chain.find(n => n.id === nodeId);
+  const option = node.options[optionIdx];
+  const fb = document.getElementById('r2QFeedback');
+
+  if (option.correct) {
+    playSound('success');
+    state.r2NodesCorrect[nodeId] = true;
+    fb.innerHTML = `
+      <div class="animate-success p-3 rounded-lg flex items-start gap-2 mt-2" style="background:rgba(191,251,51,0.1);border:1px solid rgba(191,251,51,0.4);color:#bffb33;">
+        <span class="material-symbols-outlined filled flex-shrink-0">check_circle</span>
+        <div class="text-sm md:text-base">
+          <span class="font-bold">נכון! הצומת נפתח בשרשרת ⬆️</span>
+          <div class="mt-1 text-xs md:text-sm" style="color:#c3caae;">${node.explanation}</div>
+        </div>
+      </div>
+    `;
+    setTimeout(() => {
+      state.r2ActiveQuestion = null;
+      state.r2JustUnlocked = nodeId;
+      const allCorrect = Object.values(state.r2NodesCorrect).every(v => v);
+      if (allCorrect) {
+        r2TriggerChainActivation();
+      } else {
+        r2Render();
+        // Scroll back so user sees the chain animate
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+        // Clear the just-unlocked flag after the animation completes
+        setTimeout(() => {
+          state.r2JustUnlocked = null;
+          if (state.r2Stage === 'chain') r2Render();
+        }, 1800);
+      }
+    }, 2200);
+  } else {
+    playSound('error');
+    state.errors++;
+    state.r2QuestionAttempts[nodeId]++;
+    fb.innerHTML = `
+      <div class="animate-shake p-3 rounded-lg flex items-start gap-2 mt-2" style="background:rgba(255,180,171,0.12);border:1px solid rgba(255,180,171,0.4);color:#ffb4ab;">
+        <span class="material-symbols-outlined filled flex-shrink-0">error</span>
+        <div class="text-sm md:text-base"><span class="font-bold">לא מדויק.</span> חשבו לוגית: מה קורה כשהטמפרטורה עולה? מה המשך הטבעי בתהליך?</div>
+      </div>
+    `;
+  }
+}
+
+// === CHAIN ACTIVATION TRANSITION ===
+function r2TriggerChainActivation() {
+  state.r2Stage = 'transition';
+  playSound('roomComplete');
+  r2Render();
+  // After dramatic visualization, advance to console stage
+  setTimeout(() => {
+    state.r2Stage = 'console';
+    r2Render();
+  }, 2800);
+}
+
+// === CONSOLE STAGE ===
+function r2RenderConsole() {
+  const used = r2GetUsedBudget();
+  const impact = r2GetCurrentImpact();
+  const status = r2GetClimateStatus();
+  const overBudget = used > R2_BUDGET;
+  const saved = impact >= R2_REQUIRED_IMPACT && !overBudget;
+
+  const budgetPct = Math.min(100, (used / R2_BUDGET) * 100);
+  const impactPct = Math.min(100, impact);
+
+  return `
+    <div class="animate-fadeIn">
+      <div class="glass-panel rounded-xl p-4 md:p-5 mb-4 border-2" style="border-color:rgba(255,180,171,0.5);background:rgba(255,180,171,0.06);">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled text-2xl animate-pulse" style="color:#ffb4ab;">crisis_alert</span>
+          <div class="flex-1">
+            <div class="font-display font-bold text-base md:text-lg" style="color:#ffb4ab;">השרשרת פעילה - הים מציף את החוף!</div>
+            <p class="text-sm md:text-base" style="color:#e1e4d1;">
+              קונסולת ההתערבות פעילה. בחרו <span class="font-bold" style="color:#bffb33;">שילוב פעולות</span> שיעצור את ההצפה - בלי לחרוג מהתקציב המדיני.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <div class="glass-strong rounded-xl p-3 md:p-4 border-2 transition-all" style="border-color:${overBudget ? '#ffb4ab' : 'rgba(141,148,123,0.3)'};">
+          <div class="flex items-center justify-between mb-2">
+            <div class="text-xs md:text-sm flex items-center gap-1.5" style="color:#c3caae;">
+              <span class="material-symbols-outlined text-base">payments</span>תקציב מדיני
+            </div>
+            <div class="font-mono font-bold text-sm md:text-base" dir="ltr" style="color:${overBudget ? '#ffb4ab' : '#e1e4d1'};">
+              ${used} / ${R2_BUDGET}
+            </div>
+          </div>
+          <div class="h-2 rounded-full overflow-hidden" style="background:#1d2115;">
+            <div class="h-full transition-all duration-500" style="width:${budgetPct}%;background:linear-gradient(90deg,${overBudget ? '#ffb4ab,#93000a' : '#76d4ea,#008095'});"></div>
+          </div>
+          ${overBudget ? '<div class="text-[10px] mt-1" style="color:#ffb4ab;">✗ חריגה מהתקציב</div>' : `<div class="text-[10px] mt-1" style="color:#8d947b;">${R2_BUDGET - used} נקודות נותרו</div>`}
+        </div>
+        <div class="glass-strong rounded-xl p-3 md:p-4 border-2 transition-all" style="border-color:${saved ? '#bffb33' : 'rgba(141,148,123,0.3)'};">
+          <div class="flex items-center justify-between mb-2">
+            <div class="text-xs md:text-sm flex items-center gap-1.5" style="color:#c3caae;">
+              <span class="material-symbols-outlined text-base">eco</span>השפעה
+            </div>
+            <div class="font-mono font-bold text-sm md:text-base" dir="ltr" style="color:${saved ? '#bffb33' : '#e1e4d1'};">
+              ${impact}%
+            </div>
+          </div>
+          <div class="h-2 rounded-full overflow-hidden" style="background:#1d2115;">
+            <div class="h-full transition-all duration-500" style="width:${impactPct}%;background:linear-gradient(90deg,#bffb33,#a4de02);"></div>
+          </div>
+          <div class="text-[10px] mt-1" style="color:#8d947b;">דרוש: ${R2_REQUIRED_IMPACT}% להצלת החוף</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-4">
+        ${r2Actions.map(a => {
+          const active = state.r2Actions[a.id];
+          return `
+            <button onclick="r2ToggleAction('${a.id}')"
+              class="glass-strong rounded-xl p-4 md:p-5 border-2 text-right transition-all hover:scale-[1.02] active:scale-[0.98]"
+              style="border-color:${active ? a.color : 'rgba(141,148,123,0.3)'};background:${active ? `linear-gradient(135deg,${a.color}22,${a.color}08)` : 'rgba(25,29,17,0.6)'};box-shadow:${active ? `0 0 20px ${a.color}40` : 'none'};">
+              <div class="flex items-start justify-between mb-3">
+                <div class="text-3xl md:text-4xl">${a.emoji}</div>
+                <div class="w-7 h-7 rounded-full flex items-center justify-center border-2 transition-all" style="border-color:${active ? a.color : '#434934'};background:${active ? a.color : 'transparent'};">
+                  ${active ? '<span class="material-symbols-outlined filled text-lg" style="color:#003640;">check</span>' : ''}
+                </div>
+              </div>
+              <div class="font-bold text-sm md:text-base mb-1" style="color:${active ? a.color : '#e1e4d1'};">${a.name}</div>
+              <div class="text-[11px] md:text-xs mb-3 leading-snug" style="color:#8d947b;">${a.desc}</div>
+              <div class="flex items-center justify-between text-[11px] md:text-xs">
+                <span class="font-mono px-2 py-0.5 rounded" dir="ltr" style="background:rgba(118,212,234,0.15);color:#76d4ea;">עלות: ${a.cost}</span>
+                <span class="font-mono px-2 py-0.5 rounded" dir="ltr" style="background:rgba(191,251,51,0.15);color:#bffb33;">השפעה: ${a.impact}%</span>
+              </div>
+            </button>
+          `;
+        }).join('')}
+      </div>
+
+      ${saved ? `
+        <div class="animate-success glass-strong rounded-xl p-5 md:p-6 mb-4 border-2 glow-strong" style="border-color:#bffb33;background:linear-gradient(135deg,rgba(191,251,51,0.12),rgba(160,216,0,0.05));">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="material-symbols-outlined filled text-3xl md:text-4xl" style="color:#bffb33;">verified</span>
+            <div class="flex-1">
+              <div class="font-display font-bold text-lg md:text-xl mb-1" style="color:#bffb33;">חוף הכרמל ניצל!</div>
+              <p class="text-sm md:text-base" style="color:#e1e4d1;">
+                מצאתם שילוב פעולות שמייצב את האקלים בתוך התקציב המדיני. <span class="font-mono font-bold" dir="ltr" style="color:#bffb33;">השפעה: ${impact}% / תקציב: ${used} נק׳</span>
+              </p>
+            </div>
+          </div>
+          <button onclick="r2Submit()" class="w-full px-6 md:px-8 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg" style="color:#445e00;">
+            <span>המשך לחדר הבא</span>
+            <span class="material-symbols-outlined filled">arrow_back</span>
+          </button>
+        </div>
+      ` : overBudget ? `
+        <div class="animate-shake glass-panel rounded-xl p-4 mb-4 border-2" style="border-color:#ffb4ab;background:rgba(255,180,171,0.08);">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined filled text-2xl" style="color:#ffb4ab;">warning</span>
+            <div class="text-sm md:text-base" style="color:#ffb4ab;">
+              <span class="font-bold">חריגה מהתקציב.</span> בטלו פעולה אחת והחליפו אותה בשילוב חסכוני יותר.
+            </div>
+          </div>
+        </div>
+      ` : impact > 0 ? `
+        <div class="glass-panel rounded-xl p-4 mb-4 border-2" style="border-color:#ffa62b;background:rgba(255,166,43,0.06);">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined filled text-2xl" style="color:#ffa62b;">tips_and_updates</span>
+            <div class="text-sm md:text-base" style="color:#e1e4d1;">
+              צריך <span class="font-bold" style="color:#bffb33;">השפעה של ${R2_REQUIRED_IMPACT}%</span> בתוך תקציב של <span class="font-bold" style="color:#76d4ea;">${R2_BUDGET}</span>. נסו שילוב אחר.
+            </div>
+          </div>
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
+function r2ToggleAction(actionId) {
+  const wasSaved = r2GetCurrentImpact() >= R2_REQUIRED_IMPACT && r2GetUsedBudget() <= R2_BUDGET;
+  state.r2Actions[actionId] = !state.r2Actions[actionId];
+  playSound(state.r2Actions[actionId] ? 'pickup' : 'click');
+  r2Render();
+  // Play victory sound when beach JUST got saved
+  const isSaved = r2GetCurrentImpact() >= R2_REQUIRED_IMPACT && r2GetUsedBudget() <= R2_BUDGET;
+  if (isSaved && !wasSaved) {
+    setTimeout(() => playSound('success'), 200);
+    setTimeout(() => playSound('roomComplete'), 700);
+  }
+}
+
+// === MAIN RENDER ===
+function r2Render() {
+  const beach = r2BeachView();
+  const chain = r2RenderChainSection();
+  const question = state.r2Stage === 'chain' ? r2RenderQuestion() : '';
+  const console_ = state.r2Stage === 'console' ? r2RenderConsole() : '';
+  const transition = state.r2Stage === 'transition' ? `
+    <div class="animate-fadeIn glass-strong rounded-xl p-6 md:p-8 mb-4 border-2 glow-strong" style="border-color:#ffa62b;background:linear-gradient(135deg,rgba(255,166,43,0.15),rgba(255,180,171,0.08));">
+      <div class="text-center">
+        <div class="text-5xl mb-3 animate-pulse">⚡</div>
+        <div class="font-display font-bold text-xl md:text-2xl mb-2" style="color:#ffa62b;">השרשרת פעילה</div>
+        <p class="text-sm md:text-base" style="color:#e1e4d1;">זרם הסיבתיות מתעורר... מד מפלס הים מטפס במהירות.</p>
+      </div>
+    </div>
+  ` : '';
+
+  let header = '';
+  if (state.r2Stage === 'chain') {
+    const filled = Object.values(state.r2NodesCorrect).filter(v => v).length;
+    const remaining = 3 - filled;
+    header = `
+      <div class="glass-strong rounded-xl p-4 md:p-5 mb-4 border-2" style="border-color:rgba(118,212,234,0.4);background:linear-gradient(135deg,rgba(118,212,234,0.06),transparent);">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="material-symbols-outlined filled text-2xl flex-shrink-0" style="color:#76d4ea;">school</span>
+          <div class="flex-1">
+            <div class="font-display font-bold text-base md:text-lg mb-1" style="color:#76d4ea;">המשימה: לפענח את התהליך שמציף את חוף הכרמל</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              למטה תראו <span class="font-bold" style="color:#bffb33;">שרשרת של 5 שלבים</span> שמסבירה איך פליטות הופכות להצפת חוף.
+              <span class="font-bold" style="color:#ffb4ab;">3 שלבים חסרים</span> - מסומנים ב-❓.
+              לחצו על כל ❓, ענו נכון על השאלה, והשרשרת תושלם.
+            </p>
+            <p class="text-xs md:text-sm leading-relaxed mt-2 p-2 rounded" style="color:#a9edff;background:rgba(118,212,234,0.08);border-right:3px solid #76d4ea;">
+              👆 <span class="font-bold">שימו לב לתצוגת חוף הכרמל למעלה</span> - עם כל תשובה נכונה, מפלס הים יעלה והחוף יגיב בזמן אמת. ככה תראו את התהליך מתפתח לעיניכם.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 pt-2 border-t" style="border-color:rgba(118,212,234,0.2);">
+          <div class="flex-1">
+            <div class="flex items-center justify-between mb-1.5 text-xs" style="color:#c3caae;">
+              <span>התקדמות בשרשרת</span>
+              <span class="font-mono font-bold" dir="ltr" style="color:#bffb33;">${filled} / 3</span>
+            </div>
+            <div class="h-2 rounded-full overflow-hidden" style="background:#1d2115;">
+              <div class="h-full transition-all duration-500" style="width:${(filled/3)*100}%;background:linear-gradient(90deg,#76d4ea,#bffb33);"></div>
+            </div>
+          </div>
+          ${remaining > 0 ? `
+            <div class="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full animate-pulse" style="background:rgba(255,180,171,0.12);color:#ffb4ab;border:1px solid rgba(255,180,171,0.4);">
+              <span class="material-symbols-outlined text-base">touch_app</span>
+              <span>לחצו על ❓ למטה</span>
+            </div>
+          ` : ''}
+        </div>
+      </div>
+    `;
+  }
+
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-5xl mx-auto">
+      ${r2RoomHeader()}
+      <div class="mb-4 sticky z-30" style="top:84px;">${beach}</div>
+      ${header}
+      <div class="glass-panel rounded-xl p-4 md:p-5 mb-4">
+        ${chain}
+      </div>
+      ${question}
+      ${transition}
+      ${console_}
+    </div>
+  `;
+}
+
+function renderRoom2() {
+  state.r2Stage = 'chain';
+  state.r2NodesCorrect = { 2: false, 3: false, 4: false };
+  state.r2ActiveQuestion = null;
+  state.r2QuestionAttempts = { 2: 0, 3: 0, 4: 0 };
+  state.r2Actions = { renewable: false, trees: false, electric: false };
+  r2Render();
+}
+
+function r2Submit() {
+  playSound('success');
+  state.roomsCompleted[1] = true;
+  setTimeout(() => transition('room3', 'נכנסים לחדר 3...'), 600);
+}
+
+// ========== ROOM 3: NUTRITION ==========
+// תפריט 2050 לכפר גלים - בניית ארוחה מאוזנת תחת אילוצים סביבתיים ותזונתיים
+// נתוני CO2 מבוססים על מצגת שח"ק (שקופית 17 - Environmental Working Group)
+const r3Foods = [
+  { id: 'beef',    name: 'בקר',          emoji: '🥩', co2: 30,   nutrition: 6, water: 15400, kind: 'meat' },
+  { id: 'cheese',  name: 'גבינה צהובה',   emoji: '🧀', co2: 13.5, nutrition: 5, water: 5060,  kind: 'dairy' },
+  { id: 'eggs',    name: 'ביצים',         emoji: '🥚', co2: 4.8,  nutrition: 7, water: 3300,  kind: 'animal' },
+  { id: 'bread',   name: 'לחם',           emoji: '🍞', co2: 1.5,  nutrition: 4, water: 1827,  kind: 'grain' },
+  { id: 'potato',  name: 'תפוח אדמה',     emoji: '🥔', co2: 2.9,  nutrition: 5, water: 290,   kind: 'plant' },
+  { id: 'tofu',    name: 'טופו',          emoji: '🍱', co2: 2.0,  nutrition: 8, water: 1800,  kind: 'plant' },
+  { id: 'lentils', name: 'עדשים',         emoji: '🫘', co2: 0.9,  nutrition: 9, water: 50,    kind: 'plant' },
+  { id: 'oats',    name: 'שיבולת שועל',    emoji: '🌾', co2: 1.0,  nutrition: 8, water: 1827,  kind: 'grain' },
+  { id: 'tomato',  name: 'עגבנייה',       emoji: '🍅', co2: 1.1,  nutrition: 7, water: 214,   kind: 'plant' },
+  { id: 'salad',   name: 'סלט מהחממה',    emoji: '🥗', co2: 0.5,  nutrition: 9, water: 100,   kind: 'plant', local: true },
+  { id: 'apple',   name: 'תפוח',          emoji: '🍎', co2: 0.5,  nutrition: 7, water: 822,   kind: 'plant' },
+  { id: 'banana',  name: 'בננה כפר גלים', emoji: '🍌', co2: 0.7,  nutrition: 7, water: 790,   kind: 'plant', local: true },
+];
+
+const R3_MAX_CO2 = 6.0;
+const R3_MIN_NUTRITION = 25;
+const R3_MIN_VARIETY = 5;
+
+function r3RoomHeader() {
+  return `
+    <div class="flex items-center gap-4 mb-4">
+      <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl glass-strong border-2 flex items-center justify-center text-3xl md:text-4xl" style="border-color:rgba(255,226,216,0.4);">🍽️</div>
+      <div class="flex-1">
+        <div class="font-mono text-xs md:text-sm tracking-widest" dir="ltr" style="color:#ffe2d8;">ROOM 03 / 04</div>
+        <h2 class="font-display font-bold text-2xl md:text-4xl tracking-tight" style="color:#ffe2d8;">תפריט 2050 לכפר גלים</h2>
+        <p class="text-sm md:text-base" style="color:#c3caae;">תזונה בת קיימא לפנימייה - איזון בין סביבה, תזונה וגיוון</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderRoom3() {
+  state.r3Plate = [];
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-6xl mx-auto">
+      ${r3RoomHeader()}
+
+      <div class="glass-strong rounded-xl p-4 md:p-5 mb-4 border-2" style="border-color:rgba(255,226,216,0.4);background:linear-gradient(135deg,rgba(255,226,216,0.06),transparent);">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled text-2xl flex-shrink-0" style="color:#ffe2d8;">restaurant</span>
+          <div class="flex-1">
+            <div class="font-display font-bold text-base md:text-lg mb-1" style="color:#ffe2d8;">המשימה: לתכנן ארוחה לפנימיית כפר גלים</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              בחרו פריטי מזון לצלחת. עליכם לאזן בין <span class="font-bold" style="color:#bffb33;">3 אילוצים</span>:
+            </p>
+            <div class="grid grid-cols-3 gap-2 mt-3">
+              <div class="rounded-lg p-2 text-center text-xs md:text-sm border" style="background:rgba(191,251,51,0.08);border-color:rgba(191,251,51,0.3);">
+                <div class="font-bold" style="color:#bffb33;">☁️ פליטות</div>
+                <div style="color:#c3caae;">עד 6 ק״ג CO₂</div>
+              </div>
+              <div class="rounded-lg p-2 text-center text-xs md:text-sm border" style="background:rgba(118,212,234,0.08);border-color:rgba(118,212,234,0.3);">
+                <div class="font-bold" style="color:#76d4ea;">💪 תזונה</div>
+                <div style="color:#c3caae;">לפחות 25 נק׳</div>
+              </div>
+              <div class="rounded-lg p-2 text-center text-xs md:text-sm border" style="background:rgba(255,226,216,0.08);border-color:rgba(255,226,216,0.3);">
+                <div class="font-bold" style="color:#ffe2d8;">🌈 גיוון</div>
+                <div style="color:#c3caae;">לפחות 5 פריטים</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="r3Meters" class="grid grid-cols-3 gap-3 mb-5">${r3MetersHTML()}</div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
+        <div>
+          <h3 class="font-display font-bold text-base md:text-lg mb-3 flex items-center gap-2" style="color:#e1e4d1;">
+            <span class="material-symbols-outlined" style="color:#ffe2d8;">restaurant_menu</span>
+            פריטי מזון זמינים
+          </h3>
+          <div id="r3FoodGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-2">${r3FoodsHTML()}</div>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-base md:text-lg mb-3 flex items-center gap-2" style="color:#e1e4d1;">
+            <span class="material-symbols-outlined" style="color:#bffb33;">dinner_dining</span>
+            הצלחת שלכם
+          </h3>
+          <div id="r3Plate" class="glass-strong rounded-xl p-4 min-h-[280px] border-2" style="border-color:rgba(255,226,216,0.3);">${r3PlateHTML()}</div>
+        </div>
+      </div>
+
+      <div id="r3Feedback" class="mb-3"></div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button onclick="r3Reset()" id="r3ResetBtn" class="px-4 py-3 glass-panel rounded-lg flex items-center justify-center gap-2 hover:opacity-80" style="color:#c3caae;">
+          <span class="material-symbols-outlined">refresh</span>איפוס
+        </button>
+        <button onclick="r3Submit()" id="r3SubmitBtn"
+          class="flex-1 px-6 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong" style="color:#445e00;">
+          <span class="material-symbols-outlined filled">verified</span>
+          <span>הגישו את הצלחת</span>
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function r3GetTotals() {
+  const co2 = state.r3Plate.reduce((s, f) => s + f.co2, 0);
+  const nut = state.r3Plate.reduce((s, f) => s + f.nutrition, 0);
+  const variety = state.r3Plate.length;
+  return { co2, nut, variety };
+}
+
+function r3MetersHTML() {
+  const { co2, nut, variety } = r3GetTotals();
+  const co2Pct = Math.min(100, (co2 / R3_MAX_CO2) * 100);
+  const nutPct = Math.min(100, (nut / R3_MIN_NUTRITION) * 100);
+  const varPct = Math.min(100, (variety / R3_MIN_VARIETY) * 100);
+  const co2Over = co2 > R3_MAX_CO2;
+  const nutOk = nut >= R3_MIN_NUTRITION;
+  const varOk = variety >= R3_MIN_VARIETY;
+
+  return `
+    <div class="glass-strong rounded-xl p-3 md:p-4 border-2" style="border-color:${co2Over ? '#ffb4ab' : 'rgba(191,251,51,0.3)'};">
+      <div class="flex items-center justify-between mb-2 text-xs md:text-sm">
+        <div class="flex items-center gap-1.5" style="color:#bffb33;">
+          <span class="material-symbols-outlined filled text-base">cloud</span>
+          <span class="font-bold">פליטות CO₂</span>
+        </div>
+        <div class="font-mono font-bold" dir="ltr" style="color:${co2Over ? '#ffb4ab' : '#bffb33'};">${co2.toFixed(1)} / ${R3_MAX_CO2}</div>
+      </div>
+      <div class="h-2 rounded-full overflow-hidden" style="background:#1d2115;">
+        <div class="h-full transition-all duration-500" style="width:${co2Pct}%;background:${co2Over ? 'linear-gradient(90deg,#ff8a80,#93000a)' : 'linear-gradient(90deg,#bffb33,#a4de02)'};"></div>
+      </div>
+      <div class="text-[10px] mt-1" style="color:${co2Over ? '#ffb4ab' : '#8d947b'};">${co2Over ? '⚠ חרגתם מהמגבלה' : 'יחידות ק״ג'}</div>
+    </div>
+    <div class="glass-strong rounded-xl p-3 md:p-4 border-2" style="border-color:${nutOk ? '#bffb33' : 'rgba(118,212,234,0.3)'};">
+      <div class="flex items-center justify-between mb-2 text-xs md:text-sm">
+        <div class="flex items-center gap-1.5" style="color:#76d4ea;">
+          <span class="material-symbols-outlined filled text-base">favorite</span>
+          <span class="font-bold">ערך תזונתי</span>
+        </div>
+        <div class="font-mono font-bold" dir="ltr" style="color:${nutOk ? '#bffb33' : '#76d4ea'};">${nut} / ${R3_MIN_NUTRITION}</div>
+      </div>
+      <div class="h-2 rounded-full overflow-hidden" style="background:#1d2115;">
+        <div class="h-full transition-all duration-500" style="width:${nutPct}%;background:linear-gradient(90deg,#76d4ea,#008095);"></div>
+      </div>
+      <div class="text-[10px] mt-1" style="color:#8d947b;">${nutOk ? '✓ עומד ביעד' : 'נקודות תזונה'}</div>
+    </div>
+    <div class="glass-strong rounded-xl p-3 md:p-4 border-2" style="border-color:${varOk ? '#bffb33' : 'rgba(255,226,216,0.3)'};">
+      <div class="flex items-center justify-between mb-2 text-xs md:text-sm">
+        <div class="flex items-center gap-1.5" style="color:#ffe2d8;">
+          <span class="material-symbols-outlined filled text-base">palette</span>
+          <span class="font-bold">גיוון</span>
+        </div>
+        <div class="font-mono font-bold" dir="ltr" style="color:${varOk ? '#bffb33' : '#ffe2d8'};">${variety} / ${R3_MIN_VARIETY}</div>
+      </div>
+      <div class="h-2 rounded-full overflow-hidden" style="background:#1d2115;">
+        <div class="h-full transition-all duration-500" style="width:${varPct}%;background:linear-gradient(90deg,#ffe2d8,#eac4b7);"></div>
+      </div>
+      <div class="text-[10px] mt-1" style="color:#8d947b;">${varOk ? '✓ עומד ביעד' : 'פריטים שונים'}</div>
+    </div>
+  `;
+}
+
+function r3FoodsHTML() {
+  return r3Foods.map(food => {
+    const inPlate = state.r3Plate.find(p => p.id === food.id);
+    const colorMap = {
+      meat: '#ffb4ab', dairy: '#ffa62b', animal: '#ffd54f',
+      grain: '#eac4b7', plant: '#bffb33'
+    };
+    const c = colorMap[food.kind];
+    return `
+      <button onclick="r3${inPlate ? 'Remove' : 'Add'}Food('${food.id}')"
+        class="glass-strong rounded-xl p-3 border-2 text-center transition-all hover:scale-[1.04] active:scale-95 ${inPlate ? 'opacity-60' : ''}"
+        style="border-color:${inPlate ? '#bffb33' : 'rgba(141,148,123,0.3)'};background:${inPlate ? 'rgba(191,251,51,0.08)' : 'rgba(25,29,17,0.6)'};">
+        <div class="text-3xl mb-1">${food.emoji}</div>
+        <div class="font-bold text-xs md:text-sm mb-1.5" style="color:#e1e4d1;">${food.name}${food.local ? ' <span class="text-[9px]" style="color:#bffb33;">⊛מקומי</span>' : ''}</div>
+        <div class="flex items-center justify-center gap-1 text-[10px]">
+          <span class="font-mono px-1.5 py-0.5 rounded" dir="ltr" style="background:rgba(191,251,51,0.12);color:#bffb33;">${food.co2}kg</span>
+          <span class="font-mono px-1.5 py-0.5 rounded" dir="ltr" style="background:rgba(118,212,234,0.12);color:#76d4ea;">${food.nutrition}n</span>
+        </div>
+        ${inPlate ? '<div class="text-[10px] mt-1.5 font-bold" style="color:#bffb33;">✓ בצלחת</div>' : ''}
+      </button>
+    `;
+  }).join('');
+}
+
+function r3PlateHTML() {
+  if (state.r3Plate.length === 0) {
+    return `
+      <div class="h-full flex flex-col items-center justify-center text-center py-8">
+        <div class="text-6xl mb-2 opacity-30">🍽️</div>
+        <p class="text-sm md:text-base mt-2" style="color:#c3caae;">הצלחת ריקה</p>
+        <p class="text-xs mt-1" style="color:#8d947b;">לחצו על פריטי מזון להוספה</p>
+      </div>
+    `;
+  }
+  return `
+    <div class="space-y-2">
+      ${state.r3Plate.map(food => `
+        <div class="animate-scaleIn glass-panel rounded-lg p-3 flex items-center gap-3" style="border-right:3px solid #bffb33;">
+          <div class="text-3xl">${food.emoji}</div>
+          <div class="flex-1">
+            <div class="font-bold text-sm" style="color:#e1e4d1;">${food.name}${food.local ? ' <span class="text-[10px]" style="color:#bffb33;">⊛ מקומי</span>' : ''}</div>
+            <div class="font-mono text-xs flex gap-2 mt-0.5" dir="ltr">
+              <span style="color:#bffb33;">${food.co2}kg CO₂</span>
+              <span style="color:#76d4ea;">${food.nutrition} תזונה</span>
+            </div>
+          </div>
+          <button onclick="r3RemoveFood('${food.id}')" class="opacity-60 hover:opacity-100 transition-opacity" style="color:#ffb4ab;">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function r3AddFood(id) {
+  if (state.r3Plate.find(p => p.id === id)) return;
+  const food = r3Foods.find(f => f.id === id);
+  state.r3Plate.push(food);
+  playSound('drop');
+  r3UpdateUI();
+}
+
+function r3RemoveFood(id) {
+  state.r3Plate = state.r3Plate.filter(p => p.id !== id);
+  playSound('click');
+  r3UpdateUI();
+}
+
+function r3Reset() {
+  state.r3Plate = [];
+  playSound('click');
+  r3UpdateUI();
+  document.getElementById('r3Feedback').innerHTML = '';
+}
+
+function r3UpdateUI() {
+  document.getElementById('r3Meters').innerHTML = r3MetersHTML();
+  document.getElementById('r3FoodGrid').innerHTML = r3FoodsHTML();
+  document.getElementById('r3Plate').innerHTML = r3PlateHTML();
+}
+
+function r3Submit() {
+  const fb = document.getElementById('r3Feedback');
+  const { co2, nut, variety } = r3GetTotals();
+
+  if (variety === 0) {
+    fb.innerHTML = '<div class="p-3 rounded-lg flex items-center gap-2" style="background:rgba(255,180,171,0.15);color:#ffb4ab;"><span class="material-symbols-outlined">info</span><span>הצלחת ריקה. הוסיפו פריטי מזון.</span></div>';
+    return;
+  }
+
+  const co2Ok = co2 <= R3_MAX_CO2;
+  const nutOk = nut >= R3_MIN_NUTRITION;
+  const varOk = variety >= R3_MIN_VARIETY;
+
+  if (co2Ok && nutOk && varOk) {
+    playSound('success');
+    fb.innerHTML = `
+      <div class="animate-success glass-strong rounded-xl p-4 md:p-5 mb-3 border-2" style="border-color:#bffb33;background:rgba(191,251,51,0.08);">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled text-3xl" style="color:#bffb33;">check_circle</span>
+          <div class="flex-1">
+            <div class="font-bold text-base md:text-lg" style="color:#bffb33;">צלחת מקיימת מצוינת!</div>
+            <div class="text-sm md:text-base mb-2" style="color:#e1e4d1;">
+              <span class="font-mono font-bold" dir="ltr" style="color:#bffb33;">${co2.toFixed(1)} ק״ג CO₂</span> ·
+              <span class="font-mono font-bold" dir="ltr" style="color:#76d4ea;">${nut} תזונה</span> ·
+              <span class="font-mono font-bold" dir="ltr" style="color:#ffe2d8;">${variety} פריטים</span>
+            </div>
+            <p class="text-xs md:text-sm" style="color:#c3caae;">בארוחה מהצומח ומקומית כמו שלכם, מצמצמים פליטה של כ-25 ק״ג CO₂ ביום ביחס לארוחה אופיינית - שווה ערך לנסיעה של 125 ק״מ ברכב.</p>
+          </div>
+        </div>
+      </div>
+    `;
+    state.roomsCompleted[2] = true;
+    document.getElementById('r3SubmitBtn').style.display = 'none';
+    document.getElementById('r3ResetBtn').style.display = 'none';
+    // Insert continue button after feedback
+    const cont = document.createElement('button');
+    cont.onclick = function() { playSound('roomComplete'); transition('room4', 'נכנסים לחדר 4...'); };
+    cont.className = 'w-full mt-3 px-6 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong animate-scaleIn';
+    cont.style.color = '#445e00';
+    cont.innerHTML = '<span>המשך לחדר הבא</span><span class="material-symbols-outlined filled">arrow_back</span>';
+    fb.parentNode.insertBefore(cont, fb.nextSibling);
+  } else {
+    state.errors++;
+    playSound('error');
+    let issues = [];
+    if (!co2Ok) issues.push(`<span style="color:#ffb4ab;">✗ פליטות גבוהות מדי (${co2.toFixed(1)}/${R3_MAX_CO2} ק״ג)</span> - החליפו פריטים מן החי בפריטים מהצומח`);
+    if (!nutOk) issues.push(`<span style="color:#ffb4ab;">✗ ערך תזונתי נמוך (${nut}/${R3_MIN_NUTRITION})</span> - הוסיפו עוד קטניות, ירקות או דגנים`);
+    if (!varOk) issues.push(`<span style="color:#ffb4ab;">✗ חסר גיוון (${variety}/${R3_MIN_VARIETY} פריטים)</span> - הוסיפו עוד סוגי מזון`);
+    fb.innerHTML = `
+      <div class="animate-shake glass-panel rounded-xl p-4 border-2" style="border-color:#ffb4ab;background:rgba(255,180,171,0.06);">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled text-2xl flex-shrink-0" style="color:#ffb4ab;">error</span>
+          <div class="flex-1 text-sm md:text-base space-y-1">
+            ${issues.map(i => `<div>${i}</div>`).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+
+// ========== ROOM 4: AGRICULTURE ==========
+const r4InitialCells = [
+  { id: 'A1', val: 80, status: 'optimal' },
+  { id: 'A2', val: 82, status: 'optimal' },
+  { id: 'A3', val: 60, status: 'warning' },
+  { id: 'B1', val: 30, status: 'danger' },
+  { id: 'B2', val: 78, status: 'optimal' },
+  { id: 'B3', val: 65, status: 'warning' },
+  { id: 'C1', val: 85, status: 'optimal' },
+  { id: 'C2', val: 28, status: 'danger' },
+  { id: 'C3', val: 81, status: 'optimal' },
+];
+
+function renderRoom4() {
+  state.r4Stage = 1;
+  state.r4Cells = JSON.parse(JSON.stringify(r4InitialCells));
+  state.r4Conventional = 1000;
+  state.r4Precision = 350;
+
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl glass-strong border-2 flex items-center justify-center text-3xl md:text-4xl" style="border-color:rgba(191,251,51,0.4);">🌾</div>
+        <div class="flex-1">
+          <div class="font-mono text-xs md:text-sm tracking-widest" dir="ltr" style="color:#bffb33;">ROOM 04 / 04</div>
+          <h2 class="font-display font-bold text-2xl md:text-4xl tracking-tight" style="color:#bffb33;">מטה החקלאות החכמה</h2>
+          <p class="text-sm md:text-base" style="color:#c3caae;">חקלאות מדייקת במטעי כפר גלים - תצפית רחפן בזמן אמת</p>
+        </div>
+      </div>
+      <div class="glass-strong rounded-xl p-4 md:p-5 mb-4 border-2" style="border-color:rgba(191,251,51,0.4);background:linear-gradient(135deg,rgba(191,251,51,0.06),transparent);">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled text-2xl flex-shrink-0" style="color:#bffb33;">precision_manufacturing</span>
+          <div class="flex-1">
+            <div class="font-display font-bold text-base md:text-lg mb-1" style="color:#bffb33;">המשימה: ניתוח רחפן + השקיה ממוקדת</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              הרחפן מעל מטע הבננות שלכם זיהה <span class="font-bold" style="color:#bffb33;">חלקות בלחות חריגה</span>. כפר גלים מובילה ארצית בחקלאות מדייקת - השקיה רק איפה שצריך, חיסכון אדיר במים.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 mb-6">
+        <div class="flex-1 h-1.5 rounded-full" style="background:#bffb33;"></div>
+        <div id="r4StageDot2" class="flex-1 h-1.5 rounded-full" style="background:#434934;"></div>
+        <span id="r4StageLabel" class="font-mono text-xs ltr" style="color:#c3caae;">שלב 1/2</span>
+      </div>
+      <div id="r4Content"></div>
+    </div>
+  `;
+  r4RenderStage1();
+}
+
+function r4CellColor(status) {
+  if (status === 'optimal') return { bg: 'rgba(118,212,234,0.3)', border: '#76d4ea', text: '#a9edff' };
+  if (status === 'warning') return { bg: 'rgba(255,210,150,0.3)', border: '#ffc080', text: '#ffd9b3' };
+  if (status === 'danger') return { bg: 'rgba(255,160,140,0.4)', border: '#ff8c70', text: '#ffc0b3' };
+  if (status === 'irrigated') return { bg: 'rgba(118,212,234,0.4)', border: '#76d4ea', text: '#76d4ea' };
+}
+
+function r4RenderStage1() {
+  document.getElementById('r4Content').innerHTML = `
+    <div class="animate-slideIn">
+      <div class="glass-panel rounded-xl p-4 md:p-5 mb-6" style="border-right:4px solid #bffb33;">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled" style="color:#bffb33;">flight_takeoff</span>
+          <div>
+            <div class="font-bold text-sm md:text-base mb-1" style="color:#bffb33;">🚁 שלב 1: ניטור רחפן בזמן אמת</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              הרחפן מציג מפת חום של <span class="font-bold" style="color:#bffb33;">אחוזי לחות הקרקע</span> בחלקות. החליטו בעצמכם איפה להשקות. שימו לב: השקייה לחלקה לחה - בזבוז מיותר!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+        <div class="lg:col-span-2 glass-strong rounded-2xl p-4 md:p-6 bio-pattern relative overflow-hidden">
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h3 class="font-display font-bold text-sm md:text-lg flex items-center gap-2" style="color:#bffb33;">
+                <span class="material-symbols-outlined">grid_view</span>
+                מפת חום - מטע הבננות
+              </h3>
+              <p class="text-[10px] md:text-xs ltr font-mono" style="color:#c3caae;">Real-time soil moisture</p>
+            </div>
+            <div class="flex items-center gap-1 glass-panel px-2 py-1 rounded-md">
+              <div class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:#ffb4ab;"></div>
+              <span class="font-mono text-[10px] tracking-widest ltr" style="color:#ffb4ab;">DRONE 4</span>
+            </div>
+          </div>
+          <div id="r4Grid" class="grid grid-cols-3 gap-2 md:gap-3 mb-4">${r4GridHTML()}</div>
+          <div class="border-t pt-3 grid grid-cols-2 md:grid-cols-4 gap-2 text-[10px] md:text-xs" style="border-color:#434934;">
+            <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded" style="background:#bffb33;opacity:0.6;"></div><span style="color:#c3caae;">תקין (75%+)</span></div>
+            <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded" style="background:#ffa62b;opacity:0.6;"></div><span style="color:#c3caae;">אזהרה (50-74%)</span></div>
+            <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded" style="background:#ffb4ab;opacity:0.7;"></div><span style="color:#c3caae;">סכנה (פחות מ-50%)</span></div>
+            <div class="flex items-center gap-1.5"><div class="w-3 h-3 rounded" style="background:#76d4ea;opacity:0.7;"></div><span style="color:#c3caae;">הושקה ✓</span></div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="glass-strong rounded-xl p-4">
+            <div class="text-xs md:text-sm flex items-center gap-2 mb-2" style="color:#76d4ea;">
+              <span class="material-symbols-outlined filled text-base">water_drop</span>
+              <span>חלקות הושקו</span>
+            </div>
+            <div id="r4WaterCount" class="font-mono font-bold text-2xl md:text-4xl" dir="ltr" style="color:#76d4ea;">0</div>
+            <div id="r4WaterMsg" class="text-xs mt-1" style="color:#c3caae;">לחצו על חלקה כדי להשקות</div>
+          </div>
+          <div id="r4Stage1Feedback"></div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function r4GridHTML() {
+  return state.r4Cells.map(c => {
+    const color = r4CellColor(c.status);
+    const dropletIcon = c.status === 'irrigated' ? '<span class="material-symbols-outlined filled text-base mt-1" style="color:#76d4ea;">water_drop</span>' : '';
+    return `
+      <div onclick="r4ClickCell('${c.id}')" class="tile-cell aspect-square rounded-xl border-2 flex flex-col items-center justify-center relative ${c.status === 'irrigated' ? 'animate-pulse-glow' : ''}"
+           style="background:${color.bg};border-color:${color.border};color:${color.text};">
+        <span class="absolute top-1 right-1 font-mono text-[9px] md:text-[10px] opacity-70" dir="ltr">${c.id}</span>
+        <span class="font-mono font-bold text-xl md:text-3xl" dir="ltr">${c.val}%</span>
+        ${dropletIcon}
+      </div>
+    `;
+  }).join('');
+}
+
+function r4ClickCell(id) {
+  const cell = state.r4Cells.find(c => c.id === id);
+  if (!cell || cell.status === 'irrigated') return;
+
+  const fb = document.getElementById('r4Stage1Feedback');
+  if (cell.status === 'danger') {
+    cell.val = 75;
+    cell.status = 'irrigated';
+    playSound('water');
+    document.getElementById('r4Grid').innerHTML = r4GridHTML();
+    const irrigatedCount = state.r4Cells.filter(c => c.status === 'irrigated').length;
+    document.getElementById('r4WaterCount').textContent = irrigatedCount;
+    if (irrigatedCount === 2) {
+      document.getElementById('r4WaterMsg').textContent = '🎉 כל החלקות הקריטיות הושקו!';
+      fb.innerHTML = '<div class="p-3 rounded-lg flex items-start gap-2" style="background:rgba(118,212,234,0.15);color:#76d4ea;"><span class="material-symbols-outlined filled text-base">check_circle</span><span class="text-xs md:text-sm">✓ חלקה ' + id + ' הושקתה בהצלחה!</span></div>';
+      setTimeout(() => {
+        playSound('roomComplete');
+        state.r4Stage = 2;
+        document.getElementById('r4StageDot2').style.background = '#bffb33';
+        document.getElementById('r4StageLabel').innerHTML = 'שלב <span>2</span>/<span>2</span>';
+        r4RenderStage2();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 1500);
+    } else {
+      document.getElementById('r4WaterMsg').textContent = 'נשארה עוד חלקה אחת';
+      fb.innerHTML = '<div class="p-3 rounded-lg flex items-start gap-2" style="background:rgba(118,212,234,0.15);color:#76d4ea;"><span class="material-symbols-outlined filled text-base">check_circle</span><span class="text-xs md:text-sm">✓ חלקה ' + id + ' הושקתה בהצלחה!</span></div>';
+    }
+  } else {
+    state.errors++;
+    playSound('error');
+    fb.innerHTML = '<div class="animate-shake p-3 rounded-lg flex items-start gap-2" style="background:rgba(255,180,171,0.15);color:#ffb4ab;"><span class="material-symbols-outlined filled text-base">error</span><span class="text-xs md:text-sm">✗ חלקה ' + id + ' לחה (' + cell.val + '%) - השקיה כאן = בזבוז מיותר!</span></div>';
+  }
+}
+
+function r4RenderStage2() {
+  // Start sliders at neutral middle position so students discover the correct values
+  state.r4Conventional = 500;
+  state.r4Precision = 700;
+  document.getElementById('r4Content').innerHTML = `
+    <div class="animate-slideIn">
+      <div class="glass-panel rounded-xl p-4 md:p-5 mb-6" style="border-right:4px solid #bffb33;">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled" style="color:#bffb33;">analytics</span>
+          <div class="flex-1">
+            <div class="font-bold text-sm md:text-base mb-1" style="color:#bffb33;">שלב 2: כמה מים חוסכים?</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              <span class="font-bold" style="color:#bffb33;">הזיזו את הסליידרים וגלו</span> כמה ליטרי מים נצרכים בכל שיטה.
+              <br><span class="text-xs" style="color:#c3caae;">רמז: חקלאות מדייקת חוסכת לפחות פי 2 ממה שמשתמשים בחקלאות הרגילה.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-strong rounded-xl p-4 mb-4 text-center">
+        <div class="text-xs md:text-sm mb-1" style="color:#c3caae;">מטע הבננות בכפר גלים</div>
+        <div class="font-mono font-bold text-3xl md:text-4xl flex items-center justify-center gap-2" dir="ltr" style="color:#76d4ea;">
+          <span>5,000</span><span class="text-xl">🌴</span>
+        </div>
+        <div class="text-xs" style="color:#c3caae;">עצי בננה</div>
+      </div>
+
+      <div class="space-y-4 mb-6">
+        <div class="glass-strong rounded-xl p-4 md:p-5 border-2" style="border-color:rgba(255,180,171,0.3);">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">🚜</span>
+              <span class="font-bold text-sm md:text-base" style="color:#ffb4ab;">חקלאות קונבנציונלית</span>
+            </div>
+            <div class="font-mono font-bold text-xl md:text-2xl" dir="ltr" style="color:#ffb4ab;">
+              <span id="r4ConvVal">500</span>L
+            </div>
+          </div>
+          <input type="range" min="100" max="1500" step="25" value="500" id="r4ConvSlider" dir="ltr" oninput="r4UpdateSlider()" class="climate-slider w-full">
+          <div class="flex justify-between text-[10px] mt-1 font-mono" dir="ltr" style="color:#8d947b;">
+            <span>100L (נמוך)</span><span>1500L (גבוה)</span>
+          </div>
+          <div id="r4ConvHint" class="text-xs mt-1" style="color:#c3caae;"></div>
+        </div>
+
+        <div class="glass-strong rounded-xl p-4 md:p-5 border-2" style="border-color:rgba(191,251,51,0.3);">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">🛰️</span>
+              <span class="font-bold text-sm md:text-base" style="color:#bffb33;">חקלאות מדייקת</span>
+            </div>
+            <div class="font-mono font-bold text-xl md:text-2xl" dir="ltr" style="color:#bffb33;">
+              <span id="r4PrecVal">700</span>L
+            </div>
+          </div>
+          <input type="range" min="100" max="1500" step="25" value="700" id="r4PrecSlider" dir="ltr" oninput="r4UpdateSlider()" class="climate-slider w-full">
+          <div class="flex justify-between text-[10px] mt-1 font-mono" dir="ltr" style="color:#8d947b;">
+            <span>100L (נמוך)</span><span>1500L (גבוה)</span>
+          </div>
+          <div id="r4PrecHint" class="text-xs mt-1" style="color:#c3caae;"></div>
+        </div>
+      </div>
+
+      <div class="glass-strong rounded-xl p-5 md:p-6 mb-4 text-center" style="background:radial-gradient(ellipse at center, rgba(118,212,234,0.08), transparent);">
+        <div class="text-xs md:text-sm mb-2" style="color:#c3caae;">חיסכון יומי במים</div>
+        <div id="r4Saving" class="font-mono font-bold text-3xl md:text-5xl mb-2" dir="ltr" style="color:#76d4ea;">-1,000,000</div>
+        <div class="text-sm md:text-base" style="color:#c3caae;">ליטר ליום</div>
+        <div class="mt-3 text-xs font-mono" dir="ltr" style="color:#c3caae;">
+          (<span id="r4Eq1">500</span> - <span id="r4Eq2">700</span>) × 5,000 = <span id="r4EqResult" style="color:#76d4ea;">-1,000,000</span>
+        </div>
+        <div id="r4SavingMsg" class="mt-3 text-sm" style="color:#bffb33;display:none;">💧 מים שמספיקים לכל בית הספר ל-3 חודשים!</div>
+      </div>
+
+      <div id="r4Stage2Feedback" class="mb-3"></div>
+
+      <button onclick="r4CheckStage2()" class="w-full px-6 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg" style="color:#445e00;">
+        <span>אישור החישוב</span>
+        <span class="material-symbols-outlined filled">check_circle</span>
+      </button>
+    </div>
+  `;
+  // Initial render of feedback
+  r4UpdateSlider();
+}
+
+// Acceptable ranges - not too tight, not too loose
+// Conventional water (real-world: ~1000): accept 900-1100
+// Precision water (real-world: ~350): accept 280-400
+const R4_CONV_TARGET = 1000;
+const R4_CONV_RANGE = [900, 1100];
+const R4_PREC_TARGET = 350;
+const R4_PREC_RANGE = [280, 400];
+
+function r4UpdateSlider() {
+  state.r4Conventional = parseInt(document.getElementById('r4ConvSlider').value);
+  state.r4Precision = parseInt(document.getElementById('r4PrecSlider').value);
+  const saving = (state.r4Conventional - state.r4Precision) * 5000;
+  document.getElementById('r4ConvVal').textContent = state.r4Conventional.toLocaleString();
+  document.getElementById('r4PrecVal').textContent = state.r4Precision.toLocaleString();
+  document.getElementById('r4Eq1').textContent = state.r4Conventional;
+  document.getElementById('r4Eq2').textContent = state.r4Precision;
+  document.getElementById('r4EqResult').textContent = saving.toLocaleString();
+  document.getElementById('r4Saving').textContent = saving.toLocaleString();
+
+  // Conventional hints
+  const convHint = document.getElementById('r4ConvHint');
+  if (state.r4Conventional < R4_CONV_RANGE[0]) {
+    convHint.innerHTML = '<span style="color:#ffa62b;">⬆ חקלאות רגילה משתמשת בהרבה יותר מים - העלו את הערך</span>';
+  } else if (state.r4Conventional > R4_CONV_RANGE[1]) {
+    convHint.innerHTML = '<span style="color:#ffa62b;">⬇ זה גבוה מדי - הערך הריאלי קצת נמוך יותר</span>';
+  } else {
+    convHint.innerHTML = '<span style="color:#bffb33;">✓ ערך הגיוני לחקלאות קונבנציונלית</span>';
+  }
+
+  // Precision hints
+  const precHint = document.getElementById('r4PrecHint');
+  if (state.r4Precision > R4_PREC_RANGE[1]) {
+    precHint.innerHTML = '<span style="color:#ffa62b;">⬇ חקלאות מדייקת חוסכת הרבה יותר - הקטינו את הערך</span>';
+  } else if (state.r4Precision < R4_PREC_RANGE[0]) {
+    precHint.innerHTML = '<span style="color:#ffa62b;">⬆ זה נמוך מדי, הצמחים זקוקים לכמות מינימלית של מים</span>';
+  } else {
+    precHint.innerHTML = '<span style="color:#bffb33;">✓ ערך הגיוני לחקלאות מדייקת</span>';
+  }
+
+  const inRange = (state.r4Conventional >= R4_CONV_RANGE[0] && state.r4Conventional <= R4_CONV_RANGE[1]) &&
+                  (state.r4Precision >= R4_PREC_RANGE[0] && state.r4Precision <= R4_PREC_RANGE[1]);
+  document.getElementById('r4Saving').style.color = inRange ? '#bffb33' : (saving > 0 ? '#76d4ea' : '#ffb4ab');
+  document.getElementById('r4SavingMsg').style.display = inRange ? 'block' : 'none';
+}
+
+function r4CheckStage2() {
+  const fb = document.getElementById('r4Stage2Feedback');
+  const convOk = state.r4Conventional >= R4_CONV_RANGE[0] && state.r4Conventional <= R4_CONV_RANGE[1];
+  const precOk = state.r4Precision >= R4_PREC_RANGE[0] && state.r4Precision <= R4_PREC_RANGE[1];
+
+  if (!convOk && !precOk) {
+    state.errors++;
+    playSound('error');
+    fb.innerHTML = '<div class="animate-shake glass-panel p-3 rounded-lg flex items-start gap-2" style="background:rgba(255,180,171,0.12);color:#ffb4ab;border:1px solid rgba(255,180,171,0.4);"><span class="material-symbols-outlined filled">error</span><div class="text-sm">שני הערכים לא בטווח. הסתכלו על הרמזים מתחת לכל סליידר ונסו שוב.</div></div>';
+    return;
+  }
+  if (!convOk) {
+    state.errors++;
+    playSound('error');
+    fb.innerHTML = '<div class="animate-shake glass-panel p-3 rounded-lg flex items-start gap-2" style="background:rgba(255,180,171,0.12);color:#ffb4ab;border:1px solid rgba(255,180,171,0.4);"><span class="material-symbols-outlined filled">error</span><div class="text-sm">החקלאות הקונבנציונלית לא בטווח. הסתכלו על הרמז מתחת לסליידר.</div></div>';
+    return;
+  }
+  if (!precOk) {
+    state.errors++;
+    playSound('error');
+    fb.innerHTML = '<div class="animate-shake glass-panel p-3 rounded-lg flex items-start gap-2" style="background:rgba(255,180,171,0.12);color:#ffb4ab;border:1px solid rgba(255,180,171,0.4);"><span class="material-symbols-outlined filled">error</span><div class="text-sm">החקלאות המדייקת לא בטווח. הסתכלו על הרמז מתחת לסליידר.</div></div>';
+    return;
+  }
+  playSound('success');
+  const saving = (state.r4Conventional - state.r4Precision) * 5000;
+  fb.innerHTML = '<div class="animate-success glass-strong p-4 rounded-lg flex items-start gap-3 border-2" style="background:rgba(191,251,51,0.08);color:#bffb33;border-color:#bffb33;"><span class="material-symbols-outlined filled text-2xl">check_circle</span><div><div class="font-bold text-base">מעולה! מצאתם את הטווח הנכון</div><div class="text-sm" style="color:#e1e4d1;">חקלאות מדייקת חוסכת כ-<span class="font-mono font-bold" dir="ltr" style="color:#bffb33;">' + saving.toLocaleString() + ' ליטר</span> ביום במטע אחד של כפר גלים.</div></div></div>';
+  state.roomsCompleted[3] = true;
+  // Hide validate button, show continue button
+  const validateBtn = document.querySelector('button[onclick="r4CheckStage2()"]');
+  if (validateBtn) validateBtn.style.display = 'none';
+  // Insert continue button after feedback
+  const cont = document.createElement('button');
+  cont.onclick = function() { playSound('roomComplete'); transition('room5', 'מתחברים למערכת השליטה הראשית...'); };
+  cont.className = 'w-full mt-3 px-6 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong animate-scaleIn';
+  cont.style.color = '#445e00';
+  cont.innerHTML = '<span>המשך לחדר הבא</span><span class="material-symbols-outlined filled">arrow_back</span>';
+  fb.parentNode.insertBefore(cont, fb.nextSibling);
+}
+
+// ========== ROOM 5: FINAL ==========
+const r5Modules = [
+  { id: 'fashion', icon: '👗', title: 'אופנה מקיימת', subtitle: 'מסיבת החלפת בגדים במקום Shein', color: '#f4989c' },
+  { id: 'climate', icon: '🌊', title: 'אנרגיה ירוקה', subtitle: 'הפחתת פליטות גזי חממה', color: '#76d4ea' },
+  { id: 'food', icon: '🥗', title: 'תזונה מהצומח', subtitle: 'הפחתת פליטות מהמזון', color: '#ffe2d8' },
+  { id: 'agriculture', icon: '🌾', title: 'חקלאות מדייקת', subtitle: 'חיסכון במים והגנה על קרקע', color: '#bffb33' },
+];
+
+function renderRoom5() {
+  state.r5Activated = [];
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-6xl mx-auto">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="w-14 h-14 md:w-16 md:h-16 rounded-2xl glass-strong border-2 flex items-center justify-center text-3xl md:text-4xl" style="border-color:rgba(118,212,234,0.4);">🌍</div>
+        <div class="flex-1">
+          <div class="font-mono text-xs md:text-sm tracking-widest" dir="ltr" style="color:#76d4ea;">FINAL / MASTER CONTROL</div>
+          <h2 class="font-display font-bold text-2xl md:text-4xl tracking-tight" style="color:#76d4ea;">מרכז שליטה לשיקום כדור הארץ</h2>
+          <p class="text-sm md:text-base" style="color:#c3caae;">4 מודולי תיקון - אחד לכל חדר שפענחתם</p>
+        </div>
+      </div>
+      <div class="glass-strong rounded-xl p-4 md:p-5 mb-4 border-2" style="border-color:rgba(118,212,234,0.4);background:linear-gradient(135deg,rgba(118,212,234,0.06),transparent);">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined filled text-2xl flex-shrink-0" style="color:#76d4ea;">verified_user</span>
+          <div class="flex-1">
+            <div class="font-display font-bold text-base md:text-lg mb-1" style="color:#76d4ea;">המשימה האחרונה: שיקום כדור הארץ</div>
+            <p class="text-sm md:text-base leading-relaxed" style="color:#e1e4d1;">
+              למטה כדור הארץ במצב חולה. הפעילו את ארבעת המודולים - כל אחד מסכם <span class="font-bold" style="color:#bffb33;">פעולה שלמדתם בחדרי הבריחה</span>. צפו איך כדור הארץ מתחיל להתאושש בעקבות הפעולות שלכם.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-strong rounded-2xl p-6 md:p-10 mb-6 bio-pattern relative overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+          <div class="flex flex-col items-center">
+            <div id="r5Status" class="text-xs font-mono mb-2 ltr tracking-widest" style="color:#c3caae;">EARTH STATUS: CRITICAL</div>
+            <div class="earth-container">
+              <div id="r5EarthDamaged" class="earth-orb earth-damaged" style="opacity:1;"></div>
+              <div id="r5EarthHealthy" class="earth-orb earth-healthy earth-rotating" style="opacity:0;"></div>
+              <div id="r5Particles" class="absolute inset-0 pointer-events-none"></div>
+            </div>
+            <div class="w-full max-w-xs mt-4">
+              <div class="flex items-center justify-between mb-1 text-xs md:text-sm">
+                <span style="color:#c3caae;">בריאות כדור הארץ</span>
+                <span id="r5HealthVal" class="ltr font-mono font-bold" style="color:#76d4ea;">0%</span>
+              </div>
+              <div class="meter-track"><div id="r5HealthFill" class="meter-fill" style="width:0%;background:linear-gradient(90deg,#ffb4ab,#ffa62b,#76d4ea,#bffb33);"></div></div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="glass-panel rounded-lg p-3 md:p-4">
+              <div class="flex items-center justify-between mb-1">
+                <div class="text-xs md:text-sm flex items-center gap-2" style="color:#c3caae;">
+                  <span class="material-symbols-outlined filled text-base">power</span>
+                  <span>מודולים פעילים</span>
+                </div>
+                <div id="r5ModuleCount" class="ltr font-mono font-bold text-lg md:text-xl" style="color:#e1e4d1;">0 / 4</div>
+              </div>
+            </div>
+            <div class="glass-panel rounded-lg p-3 md:p-4">
+              <div class="flex items-center gap-2 text-xs md:text-sm mb-1" style="color:#bffb33;">
+                <span class="material-symbols-outlined filled text-base">eco</span>
+                <span>סטטוס המערכת</span>
+              </div>
+              <div id="r5SystemStatus" class="text-base md:text-lg font-bold" style="color:#e1e4d1;">⏳ ממתין להפעלת מודולים</div>
+            </div>
+            <div class="glass-panel rounded-lg p-3 md:p-4 text-xs md:text-sm" style="color:#c3caae;">
+              💡 לחצו על "הפעל מודול" בכל אחד מ-4 הפאנלים למטה. כל מודול שתפעילו יתקן חלק אחר של כדור הארץ.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6" id="r5Modules">${r5ModulesHTML()}</div>
+    </div>
+  `;
+}
+
+function r5ModulesHTML() {
+  return r5Modules.map((m, i) => {
+    const active = state.r5Activated.includes(m.id);
+    return `
+      <div class="glass-strong rounded-xl p-4 md:p-5 border-2 transition-all ${active ? 'animate-pulse-glow' : 'hover:scale-[1.01]'}"
+           style="border-color:${active ? m.color : 'rgba(255,255,255,0.1)'};background:${active ? m.color + '15' : 'rgba(40, 44, 30, 0.7)'};">
+        <div class="flex items-start gap-3 mb-3">
+          <div class="text-3xl md:text-4xl">${m.icon}</div>
+          <div class="flex-1">
+            <div class="font-display font-bold text-base md:text-lg" style="color:${m.color};">
+              מודול <span class="ltr font-mono">${String(i + 1).padStart(2, '0')}</span>: ${m.title}
+            </div>
+            <div class="text-xs md:text-sm" style="color:#c3caae;">${m.subtitle}</div>
+          </div>
+          ${active ? '<span class="material-symbols-outlined filled" style="color:' + m.color + ';">check_circle</span>' : ''}
+        </div>
+        <button onclick="r5Activate('${m.id}')" ${active ? 'disabled' : ''}
+                class="w-full py-2 md:py-3 px-4 rounded-lg font-bold text-sm md:text-base transition-all flex items-center justify-center gap-2 ${active ? 'cursor-default' : 'hover:scale-[1.02] active:scale-95'}"
+                style="background:${active ? m.color + '30' : m.color};color:${active ? m.color : '#111509'};">
+          ${active ?
+            '<span class="material-symbols-outlined filled">power</span><span>פעיל ועובד</span>' :
+            '<span class="material-symbols-outlined filled">power_settings_new</span><span>הפעל מודול</span>'
+          }
+        </button>
+      </div>
+    `;
+  }).join('');
+}
+
+function r5Activate(id) {
+  if (state.r5Activated.includes(id)) return;
+  state.r5Activated.push(id);
+  playSound('water');
+
+  // Add particles
+  const particlesContainer = document.getElementById('r5Particles');
+  for (let i = 0; i < 12; i++) {
+    const p = document.createElement('div');
+    p.className = 'heal-particle';
+    p.style.left = (Math.random() * 100) + '%';
+    p.style.top = (Math.random() * 100) + '%';
+    p.style.animationDelay = (i * 0.05) + 's';
+    particlesContainer.appendChild(p);
+    setTimeout(() => p.remove(), 2500);
+  }
+
+  // Update health
+  const healthLevel = (state.r5Activated.length / 4) * 100;
+  document.getElementById('r5EarthDamaged').style.opacity = (1 - healthLevel / 100);
+  document.getElementById('r5EarthHealthy').style.opacity = (healthLevel / 100);
+  document.getElementById('r5HealthFill').style.width = healthLevel + '%';
+  document.getElementById('r5HealthVal').textContent = Math.round(healthLevel) + '%';
+  document.getElementById('r5HealthVal').style.color = healthLevel === 100 ? '#bffb33' : '#76d4ea';
+  document.getElementById('r5ModuleCount').textContent = state.r5Activated.length + ' / 4';
+  document.getElementById('r5ModuleCount').style.color = state.r5Activated.length === 4 ? '#bffb33' : '#e1e4d1';
+
+  if (state.r5Activated.length === 0) {
+    document.getElementById('r5SystemStatus').textContent = '⏳ ממתין להפעלת מודולים';
+    document.getElementById('r5Status').textContent = 'EARTH STATUS: CRITICAL';
+  } else if (state.r5Activated.length < 4) {
+    document.getElementById('r5SystemStatus').textContent = '🔄 תהליך תיקון מתבצע...';
+    document.getElementById('r5Status').textContent = 'EARTH STATUS: HEALING...';
+  } else {
+    document.getElementById('r5SystemStatus').textContent = '🎉 כל המודולים פעילים!';
+    document.getElementById('r5Status').textContent = 'EARTH STATUS: HEALED';
+  }
+
+  document.getElementById('r5Modules').innerHTML = r5ModulesHTML();
+
+  if (state.r5Activated.length === 4) {
+    state.roomsCompleted[4] = true;
+    playSound('victory');
+    setTimeout(() => transition('victory', 'משימה הושלמה! 🌍'), 3500);
+  }
+}
+
+// ========== VICTORY ==========
+function renderVictory() {
+  if (state.timerInterval) clearInterval(state.timerInterval);
+  const elapsedSec = state.startTime ? Math.floor((Date.now() - state.startTime) / 1000) : 0;
+  const m = Math.floor(elapsedSec / 60);
+  const s = elapsedSec % 60;
+  setTimeout(() => playSound('victory'), 300);
+
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-4xl mx-auto py-4">
+      <div class="glass-strong rounded-2xl p-6 md:p-10 glow-strong text-center relative overflow-hidden animate-pulse-glow">
+        <div class="absolute top-0 right-0 w-24 h-1" style="background:#bffb33;"></div>
+        <div class="absolute top-0 right-0 w-1 h-24" style="background:#bffb33;"></div>
+        <div class="absolute bottom-0 left-0 w-24 h-1" style="background:#bffb33;"></div>
+        <div class="absolute bottom-0 left-0 w-1 h-24" style="background:#bffb33;"></div>
+        <div class="relative inline-block mb-6">
+          <div class="absolute inset-0 rounded-full blur-3xl scale-150" style="background:rgba(191, 251, 51, 0.3);"></div>
+          <div class="relative text-8xl md:text-9xl">🌍</div>
+        </div>
+        <div class="font-mono text-xs md:text-sm tracking-widest mb-2 ltr" style="color:#bffb33;">MISSION COMPLETE</div>
+        <h2 class="font-display font-bold text-3xl md:text-5xl mb-4 tracking-tight" style="color:#bffb33;">הצלחתם להציל את כדור הארץ!</h2>
+        <p class="text-base md:text-xl mb-2" style="color:#e1e4d1;">חוף הכרמל ניצל. החקלאות בכפר גלים נשמרת.</p>
+        <p class="text-sm md:text-lg mb-8" style="color:#c3caae;">ד"ר גלי כפר גאה בכם - אתם הדור שיציל את כדור הארץ.</p>
+
+        <div class="glass-strong rounded-xl p-3 md:p-4 mb-8 border-2 relative overflow-hidden" style="border-color:rgba(191,251,51,0.4);">
+          <div class="absolute top-0 right-0 w-8 h-1" style="background:rgba(191,251,51,0.6);"></div>
+          <div class="absolute top-0 right-0 w-1 h-8" style="background:rgba(191,251,51,0.6);"></div>
+          <div class="absolute bottom-0 left-0 w-8 h-1" style="background:rgba(191,251,51,0.6);"></div>
+          <div class="absolute bottom-0 left-0 w-1 h-8" style="background:rgba(191,251,51,0.6);"></div>
+          <div style="position:relative;width:100%;height:0;padding-top:56.25%;overflow:hidden;border-radius:8px;">
+            <iframe loading="lazy" style="position:absolute;width:100%;height:100%;top:0;left:0;border:none;"
+              src="https://www.canva.com/design/DAHI5Y_yLzI/jYaYhLpxmxVqVJCxO6s43A/watch?embed&autoplay=1&v=20260507b"
+              allowfullscreen allow="autoplay; fullscreen"></iframe>
+          </div>
+          <p class="text-center text-xs mt-2" style="color:#8d947b;">🎬 צפו בסרטון - מסע השיקום של כדור הארץ</p>
+        </div>
+
+        <button onclick="playSound('victory'); goToScreen('certificate')"
+          class="w-full px-6 md:px-8 py-3 md:py-4 mb-3 eco-gradient font-display font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-xl glow-strong" style="color:#445e00;">
+          <span class="material-symbols-outlined filled">workspace_premium</span>
+          <span>קבלו את תעודת ההצלחה</span>
+        </button>
+
+        <div class="grid grid-cols-3 gap-2 md:gap-3 mb-8 max-w-2xl mx-auto">
+        <div class="grid grid-cols-3 gap-2 md:gap-3 mb-8 max-w-2xl mx-auto">
+          <div class="glass-panel rounded-lg p-3 md:p-4">
+            <div class="text-2xl md:text-3xl mb-1">⏱️</div>
+            <div class="font-mono font-bold text-base md:text-xl" dir="ltr" style="color:#bffb33;">${m}:${String(s).padStart(2,'0')}</div>
+            <div class="text-[10px] md:text-xs" style="color:#c3caae;">זמן השלמה</div>
+          </div>
+          <div class="glass-panel rounded-lg p-3 md:p-4">
+            <div class="text-2xl md:text-3xl mb-1">🔓</div>
+            <div class="font-mono font-bold text-base md:text-xl" dir="ltr" style="color:#bffb33;">5/5</div>
+            <div class="text-[10px] md:text-xs" style="color:#c3caae;">חדרים שפוענחו</div>
+          </div>
+          <div class="glass-panel rounded-lg p-3 md:p-4">
+            <div class="text-2xl md:text-3xl mb-1">⚠️</div>
+            <div class="font-mono font-bold text-base md:text-xl" dir="ltr" style="color:#bffb33;">${state.errors}</div>
+            <div class="text-[10px] md:text-xs" style="color:#c3caae;">שגיאות</div>
+          </div>
+        </div>
+
+        <div class="glass-panel rounded-xl p-4 md:p-5 border-r-4" style="border-color:#bffb33;">
+          <p class="text-sm md:text-base italic leading-relaxed" style="color:#e1e4d1;">
+            "אנחנו לא יורשים את כדור הארץ מאבותינו - אנחנו שואלים אותו מילדינו"
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ========== SCREEN: CERTIFICATE ==========
+function renderCertificate() {
+  if (state.timerInterval) clearInterval(state.timerInterval);
+  const elapsedSec = state.startTime ? Math.floor((Date.now() - state.startTime) / 1000) : 0;
+  const m = Math.floor(elapsedSec / 60);
+  const s = elapsedSec % 60;
+  const today = new Date();
+  const dateStr = String(today.getDate()).padStart(2, '0') + '.' + String(today.getMonth() + 1).padStart(2, '0') + '.' + today.getFullYear();
+
+  document.getElementById('screenContainer').innerHTML = `
+    <div class="animate-fadeIn max-w-3xl mx-auto py-4">
+      <div class="text-center mb-4 px-3">
+        <p class="text-sm md:text-base" style="color:#c3caae;">תעודת ההצלחה שלכם מוכנה. הורידו אותה כתמונה ושמרו למזכרת.</p>
+      </div>
+
+      <div id="certificateContent" style="background:linear-gradient(135deg,#0d1208 0%,#161d10 50%,#0d1208 100%);border:6px double #bffb33;border-radius:18px;padding:32px 28px;margin:0 auto;max-width:680px;font-family:'Heebo',sans-serif;direction:rtl;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,#bffb33,#76d4ea,#bffb33);"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;height:8px;background:linear-gradient(90deg,#bffb33,#76d4ea,#bffb33);"></div>
+
+        <div style="position:absolute;top:14px;right:14px;font-size:22px;opacity:0.4;">🌿</div>
+        <div style="position:absolute;top:14px;left:14px;font-size:22px;opacity:0.4;">🌿</div>
+        <div style="position:absolute;bottom:18px;right:14px;font-size:22px;opacity:0.4;">🌊</div>
+        <div style="position:absolute;bottom:18px;left:14px;font-size:22px;opacity:0.4;">🌊</div>
+
+        <div style="text-align:center;margin-bottom:18px;">
+          <div style="font-family:'Space Grotesk',monospace;font-size:11px;letter-spacing:0.4em;color:#bffb33;margin-bottom:8px;direction:ltr;">MISSION 2050 · CARMEL COAST RESCUE</div>
+          <div style="font-size:48px;line-height:1;margin-bottom:4px;">🌍</div>
+        </div>
+
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:#bffb33;text-align:center;margin:0 0 4px 0;letter-spacing:-0.02em;line-height:1.2;">תעודת הצלת כדור הארץ</h1>
+        <p style="text-align:center;color:#76d4ea;font-size:15px;margin:0 0 16px 0;font-weight:600;">משימה דחופה 2050 · הקוד להצלת חוף הכרמל</p>
+
+        <div style="height:1px;background:linear-gradient(90deg,transparent,#bffb33,transparent);margin:20px 0;"></div>
+
+        <p style="text-align:center;color:#c3caae;font-size:14px;margin:0 0 8px 0;">מוענקת בכבוד לחברי הצוות:</p>
+        <p style="text-align:center;font-size:22px;font-weight:700;color:#e1e4d1;margin:0 0 14px 0;line-height:1.4;padding:10px 14px;background:rgba(191,251,51,0.06);border-right:4px solid #bffb33;border-left:4px solid #bffb33;border-radius:6px;">${state.teamNames || '---'}</p>
+        <p style="text-align:center;color:#c3caae;font-size:14px;margin:0 0 4px 0;">מכיתה</p>
+        <p style="text-align:center;font-size:20px;font-weight:700;color:#76d4ea;margin:0 0 24px 0;">${state.className || '---'}</p>
+
+        <p style="text-align:center;color:#e1e4d1;font-size:14px;line-height:1.7;margin:0 0 18px 0;padding:0 8px;">
+          על השלמה מוצלחת של חדר הבריחה הסביבתי, פעולה לחקר וגילוי משבר האקלים, וההבנה כי <strong style="color:#bffb33;">העתיד נבנה על ידינו</strong>.
+        </p>
+
+        <div style="background:rgba(118,212,234,0.06);border-radius:10px;padding:14px 16px;margin:0 0 20px 0;border:1px solid rgba(118,212,234,0.25);">
+          <div style="font-weight:700;color:#76d4ea;font-size:13px;margin-bottom:8px;text-align:center;">📚 מה למדנו במהלך המשימה</div>
+          <ul style="list-style:none;padding:0;margin:0;color:#e1e4d1;font-size:13px;line-height:1.9;">
+            <li style="padding-right:18px;position:relative;"><span style="position:absolute;right:0;color:#bffb33;">✓</span>טביעת הרגל הסביבתית של תעשיית האופנה המהירה</li>
+            <li style="padding-right:18px;position:relative;"><span style="position:absolute;right:0;color:#bffb33;">✓</span>תהליך אפקט החממה ועליית מפלס הים</li>
+            <li style="padding-right:18px;position:relative;"><span style="position:absolute;right:0;color:#bffb33;">✓</span>קשרי תזונה בת קיימא והשפעתם על האקלים</li>
+            <li style="padding-right:18px;position:relative;"><span style="position:absolute;right:0;color:#bffb33;">✓</span>חקלאות מדייקת ויעילה - הייחוד של כפר גלים</li>
+            <li style="padding-right:18px;position:relative;"><span style="position:absolute;right:0;color:#bffb33;">✓</span>פעולות מיידיות לשיקום ושמירה על כדור הארץ</li>
+          </ul>
+        </div>
+
+        <p style="text-align:center;color:#bffb33;font-size:14px;font-weight:700;margin:0 0 20px 0;font-style:italic;">
+          תודה ששמרתם על הסביבה ועל חוף הכרמל - הצלתם את העתיד שלנו 🌱
+        </p>
+
+        <div style="background:rgba(118,212,234,0.05);border-radius:10px;padding:12px 14px;margin:0 0 18px 0;border:1px solid rgba(118,212,234,0.2);">
+          <div style="font-weight:700;color:#76d4ea;font-size:12px;margin-bottom:8px;text-align:center;">📊 הביצועים שלכם במשימה</div>
+          <div style="display:flex;justify-content:space-around;gap:8px;text-align:center;">
+            <div style="flex:1;">
+              <div style="font-family:'Space Grotesk',monospace;font-size:18px;font-weight:700;color:#bffb33;direction:ltr;">${m}:${String(s).padStart(2,'0')}</div>
+              <div style="font-size:10px;color:#c3caae;">זמן השלמה</div>
+            </div>
+            <div style="width:1px;background:rgba(141,148,123,0.3);"></div>
+            <div style="flex:1;">
+              <div style="font-family:'Space Grotesk',monospace;font-size:18px;font-weight:700;color:#bffb33;direction:ltr;">5/5</div>
+              <div style="font-size:10px;color:#c3caae;">חדרים שפוענחו</div>
+            </div>
+            <div style="width:1px;background:rgba(141,148,123,0.3);"></div>
+            <div style="flex:1;">
+              <div style="font-family:'Space Grotesk',monospace;font-size:18px;font-weight:700;color:#bffb33;direction:ltr;">${state.errors}</div>
+              <div style="font-size:10px;color:#c3caae;">טעויות</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:end;margin-top:16px;padding-top:14px;border-top:1px solid rgba(141,148,123,0.3);font-size:11px;color:#8d947b;">
+          <div style="text-align:right;">
+            <div style="color:#c3caae;font-weight:700;">ביה"ס כפר גלים</div>
+            <div>שבוע סביבה תשפ"ו</div>
+            <div style="font-family:'Space Grotesk',monospace;direction:ltr;">${dateStr}</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="display:inline-flex;flex-direction:column;align-items:center;">
+              <div style="width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,#bffb33,#a4de02 50%,#445e00 100%);display:flex;align-items:center;justify-content:center;border:3px solid #bffb33;box-shadow:0 0 20px rgba(191,251,51,0.5);position:relative;">
+                <div style="font-size:24px;">🌍</div>
+                <div style="position:absolute;bottom:-3px;right:-3px;font-size:14px;">⭐</div>
+              </div>
+              <div style="margin-top:6px;font-weight:700;color:#bffb33;font-size:10px;letter-spacing:0.15em;">EARTH GUARDIANS</div>
+            </div>
+          </div>
+          <div style="text-align:left;width:90px;">&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="mt-6 max-w-2xl mx-auto px-3">
+        <button onclick="playSound('click'); downloadCertificate()" id="downloadBtn"
+          class="w-full px-6 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong" style="color:#445e00;">
+          <span class="material-symbols-outlined filled">download</span>
+          <span>הורדת התעודה</span>
+        </button>
+        <button onclick="playSound('click'); restart()" id="restartBtn"
+          class="w-full mt-3 px-6 py-3 md:py-4 glass-panel rounded-lg flex items-center justify-center gap-2 hover:opacity-80 text-base md:text-lg" style="color:#c3caae;display:none;">
+          <span class="material-symbols-outlined">refresh</span>
+          <span>התחלה מחדש</span>
+        </button>
+      </div>
+      <div id="certDownloadStatus" class="text-center mt-2 text-sm" style="color:#bffb33;"></div>
+    </div>
+  `;
+}
+
+
+function downloadCertificate() {
+  const cert = document.getElementById('certificateContent');
+  const status = document.getElementById('certDownloadStatus');
+  const btn = document.getElementById('downloadBtn');
+  if (!cert || typeof html2canvas === 'undefined') {
+    status.textContent = 'ספריית html2canvas לא נטענה - ודאו חיבור לאינטרנט';
+    status.style.color = '#ffb4ab';
+    return;
+  }
+  status.textContent = '⏳ מכין את התעודה...';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+  html2canvas(cert, {
+    backgroundColor: '#111509',
+    scale: 2,
+    logging: false,
+    useCORS: true
+  }).then(function(canvas) {
+    canvas.toBlob(function(blob) {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      const safeClass = (state.className || 'kfargalim').replace(/[^a-zA-Z0-9]/g, '_');
+      link.download = 'certificate_' + safeClass + '.png';
+      link.href = url;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+      playSound('success');
+      status.textContent = '✅ התעודה ירדה בהצלחה! עכשיו תוכלו להתחיל מחדש';
+      status.style.color = '#bffb33';
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      const rBtn = document.getElementById('restartBtn');
+      if (rBtn) rBtn.style.display = 'flex';
+    }, 'image/png');
+  }).catch(function(err) {
+    console.error(err);
+    status.textContent = 'אירעה שגיאה בהורדה - נסו שוב';
+    status.style.color = '#ffb4ab';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  });
+}
+
+function restart() {
+  state.screen = 'presentation';
+  state.timerStarted = false;
+  state.timeLeft = 35 * 60;
+  if (state.timerInterval) clearInterval(state.timerInterval);
+  state.errors = 0;
+  state.startTime = null;
+  state.roomsCompleted = [false, false, false, false, false];
+  state.teamNames = '';
+  state.className = '';
+  state.r1Cart = [];
+  state.r1Stage = 'cart';
+  state.r1Attempts = 0;
+  state.r2Stage = 'chain';
+  state.r2NodesCorrect = { 2: false, 3: false, 4: false };
+  state.r2ActiveQuestion = null;
+  state.r2QuestionAttempts = { 2: 0, 3: 0, 4: 0 };
+  state.r2JustUnlocked = null;
+  state.r2Actions = { renewable: false, trees: false, electric: false };
+  state.r3Plate = [];
+  state.r4Stage = 1;
+  state.r4Cells = null;
+  state.r5Activated = [];
+  updateTimer();
+  goToScreen('presentation');
+}
+
+// ========== INIT ==========
+window.addEventListener('DOMContentLoaded', function() {
+  goToScreen('presentation');
+  updateTimer();
+});
+</script>
+
+</body>
+</html>
