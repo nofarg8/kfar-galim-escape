@@ -480,6 +480,7 @@ function updateProgressDots() {
 
 // ========== TRANSITIONS ==========
 function transition(nextScreen, text) {
+  try { playSound('roomComplete'); } catch(e) {}
   const overlay = document.createElement('div');
   overlay.className = 'transition-overlay';
   overlay.innerHTML = '<div class="text-3xl md:text-5xl font-display font-bold animate-pulse mb-4 text-center px-4" style="color:#bffb33;">' + text + '</div><div class="w-64 h-2 bg-slate-800 rounded overflow-hidden"><div class="h-full" style="background:#bffb33;animation:growBar 1.5s ease-out forwards;"></div></div>';
@@ -751,7 +752,6 @@ function renderBriefing() {
 
 function startMission() {
   startTimer();
-  playSound('roomComplete');
   transition('room1', 'נכנסים לחדר 1...');
 }
 
@@ -1312,7 +1312,6 @@ function r1RenderStageReveal() {
 }
 
 function r1Submit() {
-  playSound('roomComplete');
   state.roomsCompleted[0] = true;
   setTimeout(() => transition('room2', 'נכנסים לחדר 2...'), 600);
 }
@@ -2183,7 +2182,7 @@ function r3Submit() {
     document.getElementById('r3ResetBtn').style.display = 'none';
     // Insert continue button after feedback
     const cont = document.createElement('button');
-    cont.onclick = function() { playSound('roomComplete'); transition('room4', 'נכנסים לחדר 4...'); };
+    cont.onclick = function() { transition('room4', 'נכנסים לחדר 4...'); };
     cont.className = 'w-full mt-3 px-6 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong animate-scaleIn';
     cont.style.color = '#445e00';
     cont.innerHTML = '<span>המשך לחדר הבא</span><span class="material-symbols-outlined filled">arrow_back</span>';
@@ -2531,7 +2530,7 @@ function r4CheckStage2() {
   if (validateBtn) validateBtn.style.display = 'none';
   // Insert continue button after feedback
   const cont = document.createElement('button');
-  cont.onclick = function() { playSound('roomComplete'); transition('room5', 'מתחברים למערכת השליטה הראשית...'); };
+  cont.onclick = function() { transition('room5', 'מתחברים למערכת השליטה הראשית...'); };
   cont.className = 'w-full mt-3 px-6 py-3 md:py-4 eco-gradient font-bold rounded-lg hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 text-base md:text-lg glow-strong animate-scaleIn';
   cont.style.color = '#445e00';
   cont.innerHTML = '<span>המשך לחדר הבא</span><span class="material-symbols-outlined filled">arrow_back</span>';
