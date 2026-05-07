@@ -327,6 +327,7 @@ const state = {
   timeLeft: 35 * 60,
   timerInterval: null,
   startTime: null,
+  timeOut: false,
   errors: 0,
   roomsCompleted: [false, false, false, false, false],
   // Team info
@@ -443,8 +444,41 @@ function startTimer() {
   state.timerInterval = setInterval(() => {
     state.timeLeft = Math.max(0, state.timeLeft - 1);
     updateTimer();
+    if (state.timeLeft === 0 && !state.timeOut) {
+      state.timeOut = true;
+      clearInterval(state.timerInterval);
+      state.timerInterval = null;
+      showTimeOutOverlay();
+    }
   }, 1000);
   updateTimer();
+}
+
+function showTimeOutOverlay() {
+  try { playSound('victory'); } catch(e) {}
+  const overlay = document.createElement('div');
+  overlay.id = 'timeOutOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.92);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px);';
+  overlay.innerHTML = `
+    <div class="glass-strong rounded-2xl p-6 md:p-10 max-w-2xl text-center border-2 glow-strong animate-scaleIn" style="border-color:#bffb33;background:linear-gradient(135deg,rgba(191,251,51,0.08),rgba(118,212,234,0.05));">
+      <div class="text-6xl md:text-7xl mb-4">⏰</div>
+      <h2 class="font-display font-bold text-2xl md:text-3xl mb-4" style="color:#bffb33;">הזמן נגמר!</h2>
+      <p class="text-base md:text-lg leading-relaxed mb-6" style="color:#e1e4d1;">
+        אבל <span class="font-bold" style="color:#bffb33;">ד"ר גלי כפר</span> ראתה את העבודה הנפלאה שלכם, והחליטה לתת לכם לסיים אותה!
+      </p>
+      <button onclick="dismissTimeOutOverlay()" class="px-8 md:px-12 py-3 md:py-4 eco-gradient font-display font-bold text-base md:text-xl rounded-full hover:scale-105 active:scale-95 transition-all flex items-center gap-2 mx-auto glow-strong" style="color:#445e00;">
+        <span class="material-symbols-outlined filled">rocket_launch</span>
+        <span>המשיכו במשימה!</span>
+      </button>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+}
+
+function dismissTimeOutOverlay() {
+  try { playSound('click'); } catch(e) {}
+  const ov = document.getElementById('timeOutOverlay');
+  if (ov) ov.remove();
 }
 
 function updateTimer() {
@@ -2695,8 +2729,9 @@ function r5Activate(id) {
 function renderVictory() {
   if (state.timerInterval) clearInterval(state.timerInterval);
   const elapsedSec = state.startTime ? Math.floor((Date.now() - state.startTime) / 1000) : 0;
-  const m = Math.floor(elapsedSec / 60);
-  const s = elapsedSec % 60;
+  const totalSec = state.timeOut ? 35 * 60 : Math.min(elapsedSec, 35 * 60);
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
   setTimeout(() => playSound('victory'), 300);
 
   document.getElementById('screenContainer').innerHTML = `
@@ -2735,7 +2770,6 @@ function renderVictory() {
         </button>
 
         <div class="grid grid-cols-3 gap-2 md:gap-3 mb-8 max-w-2xl mx-auto">
-        <div class="grid grid-cols-3 gap-2 md:gap-3 mb-8 max-w-2xl mx-auto">
           <div class="glass-panel rounded-lg p-3 md:p-4">
             <div class="text-2xl md:text-3xl mb-1">⏱️</div>
             <div class="font-mono font-bold text-base md:text-xl" dir="ltr" style="color:#bffb33;">${m}:${String(s).padStart(2,'0')}</div>
@@ -2767,8 +2801,9 @@ function renderVictory() {
 function renderCertificate() {
   if (state.timerInterval) clearInterval(state.timerInterval);
   const elapsedSec = state.startTime ? Math.floor((Date.now() - state.startTime) / 1000) : 0;
-  const m = Math.floor(elapsedSec / 60);
-  const s = elapsedSec % 60;
+  const totalSec = state.timeOut ? 35 * 60 : Math.min(elapsedSec, 35 * 60);
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
   const today = new Date();
   const dateStr = String(today.getDate()).padStart(2, '0') + '.' + String(today.getMonth() + 1).padStart(2, '0') + '.' + today.getFullYear();
 
@@ -2927,6 +2962,7 @@ function restart() {
   state.screen = 'presentation';
   state.timerStarted = false;
   state.timeLeft = 35 * 60;
+  state.timeOut = false;
   if (state.timerInterval) clearInterval(state.timerInterval);
   state.errors = 0;
   state.startTime = null;
